@@ -106,7 +106,7 @@ export default function ConsentForm() {
             }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/")}
           >
             Disagree
           </button>
