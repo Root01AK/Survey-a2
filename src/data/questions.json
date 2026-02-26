@@ -1,0 +1,158 @@
+[{"section": "About You",
+"question":"1. What is your age? [If <18 or Prefer not to say, end]",
+"options":["18-25 years","26-30 years","31-35 years","36-40 years","41-45 years","46-50 years","51-55 years","56-60 years","61 years and above","Prefer not to say"],
+"description": "Let's start with some basic information about yourself. This helps us understand who we're serving."
+},
+
+{"section": "About You",
+"question":"2. How do you identify your gender? Choose the option that feels right for you:",
+"options":["Transgender woman (assigned male at birth, identify as woman)","Transgender man (assigned female at birth, identify as man)","Hijra","Kothi","Panthi","Double-decker","Non-binary","Genderqueer","Man","Woman","Other (please specify)","Prefer not to say"],
+"rules":" Choose the option that feels right for you:"
+},
+
+{"section": "About You",
+"question":"3. Who are you attracted to? (Your sexual orientation)",
+"options":["Only men","Only women","Both men and women","All genders/pansexual","Not sexually attracted to anyone (asexual)","Queer (I don't fit into categories)","Still figuring it out","Prefer not to say"]
+},
+
+{"section": "About You",
+"question":"4. Where were you born? (Your native place/birthplace)",
+"options":["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi (NCT)","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry","Born outside India","Prefer not to say"]
+},
+
+{"section": "About You",
+"question":"5.  Where do you currently live?",
+"options":["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi (NCT)","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry","Born outside India","Prefer not to say"]
+},
+
+{"section": "About You",
+"question":"5a.  What type of area do you live in?",
+"options":["Big city/Metro (population over 10 lakh)","Small city/Town (population 1 lakh - 10 lakh)","Town (population under 1 lakh)","Village/Rural area","Prefer not to say"]
+},
+
+{"section": "Migration History",
+"question":"6. Is your current place of residence the same as your birthplace?",
+"options":["Yes, I live where I was born (Skip to question 8)","No, I migrated/moved to a different place (Continue to question 7)","Prefer not to say (Skip to question 8)"],
+ "description": "These questions help us understand migration patterns within our community.",
+ "strictrules":"Programmer Note: Auto fill Q6=Yes, if Q4=Q5 & Skip to Q8➤ If you live where you were born, skip to question 8[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
+},
+
+{"section": "Migration History",
+"question":"7.   If you migrated/moved: When did you come to your current location?",
+"options":["0-5 years ago","5-10 years ago","10-15 years ago","Over 15 years ago","Don't remember","Prefer not to say"]
+},
+
+{"section": "Migration History",
+"question":"7a. Did you migrate/move alone?",
+"options":["Yes, I moved alone","No, I moved with family","No, I moved with friends/community members","Don't know","Prefer not to say"] 
+ },
+
+ {
+  "section": "Migration History",
+  "question": "7b. What was the main reason you migrated to your current location?",
+  "options": ["Employment/job opportunities", "Education", "To escape discrimination or violence", "Family reasons", "To join LGBTQ+ community/find acceptance", "Marriage", "Better healthcare access", "Other", "Prefer not to say"]
+},
+
+
+{"section":"Migration History",
+
+"question":"8. What is your religion?",
+"options":["Hindu","Muslim","Christian","Sikh","Buddhist","Jain","No religion/Atheist","Other","Prefer not to say"]
+
+},
+
+{"section":"Migration History",
+
+"question":"9. Do you belong to any of these communities?",
+"options":["Scheduled Caste (SC)","Scheduled Tribe (ST)","Other Backward Class (OBC)","General category","Not sure","Prefer not to say"],
+"rules":" (This helps us understand if marginalized caste communities face additional challenges)"
+
+},
+
+{"section":"Migration History",
+
+"question":"10. What is the highest level of education you have completed?",
+"options":["Never went to school","Primary school (up to Class 5)","Middle school (Class 6-8)","Secondary/Matriculation (Class 10)","Higher Secondary/Intermediate (Class 12)","Diploma or certificate course","Graduate degree (BA/BSc/BCom, etc.)","Postgraduate degree (MA/MSc/MBA, etc.)","Prefer not to say"]
+},
+
+{"section":"Migration History",
+
+"question":"11. What do you currently do for work/livelihood?",
+"options":["Salaried job (full-time)","Daily wage work/casual labor","Self-employed/own business","Student","Looking for work","Sex work","Begging/badhai (traditional hijra work)","Housewife/homemaker","Not working currently","Other","Prefer not to say"]
+},
+
+{"section":"Migration History",
+
+"question":"12. About how much money does your household earn each month?",
+"options":["Less than ₹5,000","₹5,000 - ₹10,000","₹10,001 - ₹20,000","₹20,001 - ₹40,000","₹40,001 - ₹75,000","More than ₹75,000","Don't know","Prefer not to say"],
+"rules":"  (This includes income from all people you live with)"
+},
+
+{"section":"Migration History",
+
+"question":"13. Who do you currently live with?",
+"options":["Parents/family","Husband/wife","Partner (same-sex)","Friends/roommates","Alone","Hijra gharana/community","No stable housing/street","Other","Prefer not to say"]
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"14. Have you ever had sex with someone?",
+"options":["Yes","No"],
+"description":"The next questions are about your relationships and sexual life. This information helps us provide better sexual health services. Remember, you can skip any question.",
+"strictrules":" If NO, please skip to Section C on page _ (Violence section)"
+
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"15. In the last 6 months, about how many people have you had sex with?",
+"options":["None (no sex in last 6 months)","1 person","2-5 people","6-10 people","11-20 people","More than 20 people","Prefer not to say"]
+
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"16. What is your current relationship situation?",
+"options":["Single, not dating anyone","Dating someone (not living together)","Living with my partner","Married to opposite-sex spouse (arranged/family pressure)","Married to same-sex spouse/partner","Have multiple partners","Other","Prefer not to say"]
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"17. When you have anal sex, what role do you usually take?",
+"options":["Receptive/bottom (receiving partner)","Insertive/top (penetrating partner)","Both, depending on the situation (versatile)","I don't have anal sex","Prefer not to say"],
+"rules":"   (You can select more than one)"
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"18. Do you have oral sex?",
+"options":["Yes, I give oral sex","Yes, I receive oral sex","Yes, both","No","Prefer not to say"]
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"19. In the last 6 months, how often did you or your partner(s) use condoms during anal sex?",
+"options":["Every single time (100%)","Most of the time (75% or more)","Sometimes (about half the time)","Rarely (less than 25%)","Never","I haven't had anal sex in the last 6 months","Prefer not to say"]
+},
+
+{"section":"Sexual Health and Relationships",
+
+"question":"20. Have you ever had group sex (sex with 3 or more people at the same time)?",
+"options":["Yes, in the last 6 months","Yes, but not recently","No, never","Prefer not to say"]
+},
+
+{"section":"Sex Work",
+"description":"Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
+"question":"21. Have you ever exchanged sex for money, food, a place to stay, or other things you needed?",
+"options":["Yes, I do this regularly now (within past month)","Yes, I did this in the past year","Yes, but not recently","No, never","Prefer not to say"]
+},
+
+{"section":"Sex Work",
+
+"question":"22. In the past month, has any client forced you to have sex without a condom when you wanted to use one?",
+"options":["Yes, this happened several times","Yes, this happened once","No","Don't remember","Prefer not to say"]
+}
+
+
+
+]
