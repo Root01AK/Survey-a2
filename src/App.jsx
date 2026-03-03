@@ -10,6 +10,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/surveyintro" element={<SurveyIntro />} />
         <Route path="/survey" element={<Survey />} />
+
       </Routes>
     </BrowserRouter>
   );
