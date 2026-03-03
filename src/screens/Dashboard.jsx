@@ -22,7 +22,7 @@ const navigate = useNavigate();
           }}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
-          onClick={() => navigate("/consent")}
+          onClick={() => navigate("/survey")}
         >
           <span style={styles.buttonContent}>
             Start Survey

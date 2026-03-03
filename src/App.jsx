@@ -1,16 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./screens/Dashboard";
-import ConsentForm from "./screens/ConsentForm";
-import About from "./screens/About";
-
+import SurveyIntro from "./screens/SurveyIntro";
+import Survey from "./screens/Survey";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<Dashboard />} />
-        <Route path="/consent" element={<ConsentForm />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/surveyintro" element={<SurveyIntro />} />
+        <Route path="/survey" element={<Survey />} />
       </Routes>
     </BrowserRouter>
   );
