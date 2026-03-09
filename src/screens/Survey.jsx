@@ -331,9 +331,9 @@ export default function MultiStepForm() {
           </div>
           
         )}
- {currentQuestion.optionrule && (
-              <p style={styles.info}>{currentQuestion.optionrule}</p>
-            )}
+{currentQuestion?.optionrule && (
+  <p style={styles.info}>{currentQuestion.optionrule}</p>
+)}
         {/* ================= BUTTONS ================= */}
 
         <div style={styles.buttonContainer}>
