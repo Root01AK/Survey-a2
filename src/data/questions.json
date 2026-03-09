@@ -1,479 +1,850 @@
-[{"sectionCode": "A",
-"section": "About You",
-"question":"1. What is your age? [If <18 or Prefer not to say, end]",
-"options":["18-25 years","26-30 years","31-35 years","36-40 years","41-45 years","46-50 years","51-55 years","56-60 years","61 years and above","Prefer not to say"],
-"description": "Let's start with some basic information about yourself. This helps us understand who we're serving."
-},
-
-{"sectionCode": "A",
-"section": "About You",
-"question":"2. How do you identify your gender? Choose the option that feels right for you:",
-"options":["Transgender woman (assigned male at birth, identify as woman)","Transgender man (assigned female at birth, identify as man)","Hijra","Kothi","Panthi","Double-decker","Non-binary","Genderqueer","Man","Woman","Other (please specify)","Prefer not to say"],
-"rules":" Choose the option that feels right for you:"
-},
-
-{"sectionCode": "A",
-"section": "About You",
-"question":"3. Who are you attracted to? (Your sexual orientation)",
-"options":["Only men","Only women","Both men and women","All genders/pansexual","Not sexually attracted to anyone (asexual)","Queer (I don't fit into categories)","Still figuring it out","Prefer not to say"]
-},
-
-{"sectionCode": "A",
-"section": "About You",
-"question":"4. Where were you born? (Your native place/birthplace)",
-"options":["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi (NCT)","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry","Born outside India","Prefer not to say"]
-},
-
-{"sectionCode": "A",
-"section": "About You",
-"question":"5.  Where do you currently live?",
-"options":["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli and Daman and Diu","Delhi (NCT)","Jammu and Kashmir","Ladakh","Lakshadweep","Puducherry","Born outside India","Prefer not to say"]
-},
-
-{"sectionCode": "A",
-"section": "About You",
-"question":"5a.  What type of area do you live in?",
-"options":["Big city/Metro (population over 10 lakh)","Small city/Town (population 1 lakh - 10 lakh)","Town (population under 1 lakh)","Village/Rural area","Prefer not to say"]
-},
-
-{
-  "sectionCode": "A",
-  "section": "Migration History",
-  "question":"6. Is your current place of residence the same as your birthplace?",
-  "options":["Yes, I live where I was born (Skip to question 8)","No, I migrated/moved to a different place (Continue to question 7)","Prefer not to say (Skip to question 8)"],
-  "description": "These questions help us understand migration patterns within our community.",
-  "strictrules":"Programmer Note: Auto fill Q6=Yes, if Q4=Q5 & Skip to Q8➤ If you live where you were born, skip to question 8[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
-},
-
-{
-  "sectionCode": "A",
-  "section": "Migration History",
-  "question":"7.   If you migrated/moved: When did you come to your current location?",
-  "options":["0-5 years ago","5-10 years ago","10-15 years ago","Over 15 years ago","Don't remember","Prefer not to say"]
-},
-
-{
-  "sectionCode": "A",
-  "section": "Migration History",
-  "question":"7a. Did you migrate/move alone?",
-  "options":["Yes, I moved alone","No, I moved with family","No, I moved with friends/community members","Don't know","Prefer not to say"] 
- },
-
- {
-  "sectionCode": "A",
-  "section": "Migration History",
-  "question": "7b. What was the main reason you migrated to your current location?",
-  "options": ["Employment/job opportunities", "Education", "To escape discrimination or violence", "Family reasons", "To join LGBTQ+ community/find acceptance", "Marriage", "Better healthcare access", "Other", "Prefer not to say"]
-},
-
-
-{ "sectionCode": "A",
-  "section":"Migration History",
-  "question":"8. What is your religion?",
-  "options":["Hindu","Muslim","Christian","Sikh","Buddhist","Jain","No religion/Atheist","Other","Prefer not to say"]
-
-},
-
-{
-  "sectionCode": "A",
-  "section":"Migration History",
-  "question":"9. Do you belong to any of these communities?",
-  "options":["Scheduled Caste (SC)","Scheduled Tribe (ST)","Other Backward Class (OBC)","General category","Not sure","Prefer not to say"],
-  "rules":" (This helps us understand if marginalized caste communities face additional challenges)"
-
-},
-
-{
-  "sectionCode": "A",
-  "section":"Migration History",
-  "question":"10. What is the highest level of education you have completed?",
-  "options":["Never went to school","Primary school (up to Class 5)","Middle school (Class 6-8)","Secondary/Matriculation (Class 10)","Higher Secondary/Intermediate (Class 12)","Diploma or certificate course","Graduate degree (BA/BSc/BCom, etc.)","Postgraduate degree (MA/MSc/MBA, etc.)","Prefer not to say"]
-},
-
-{
-  "sectionCode": "A",
-  "section":"Migration History",
-  "question":"11. What do you currently do for work/livelihood?",
-  "options":["Salaried job (full-time)","Daily wage work/casual labor","Self-employed/own business","Student","Looking for work","Sex work","Begging/badhai (traditional hijra work)","Housewife/homemaker","Not working currently","Other","Prefer not to say"]
-},
-
-{
-  "sectionCode": "A",
-  "section":"Migration History",
-  "question":"12. About how much money does your household earn each month?",
-  "options":["Less than ₹5,000","₹5,000 - ₹10,000","₹10,001 - ₹20,000","₹20,001 - ₹40,000","₹40,001 - ₹75,000","More than ₹75,000","Don't know","Prefer not to say"],
-  "rules":"  (This includes income from all people you live with)"
-},
-
-{
+[
+  {
     "sectionCode": "A",
-    "section":"Migration History",
-     "question":"13. Who do you currently live with?",
-     "options":["Parents/family","Husband/wife","Partner (same-sex)","Friends/roommates","Alone","Hijra gharana/community","No stable housing/street","Other","Prefer not to say"]
-},
+    "section": "About You",
+    "question": "1. What is your age? ",
+    "info": "[If <18, end survey. If Prefer not to say, show info popup]",
+    "options": [
+      "18-25 years",
+      "26-30 years",
+      "31-35 years",
+      "36-40 years",
+      "41-45 years",
+      "46-50 years",
+      "51-55 years",
+      "56-60 years",
+      "61 years and above",
+      "Prefer not to say"
+    ],
+    "description": "Let's start with some basic information about yourself. This helps us understand who we're serving."
+  },
 
-{
-"sectionCode": "B",
-"section":"Sexual Health and Relationships",
-"question":"14. Have you ever had sex with someone?",
-"options":["Yes","No"],
-"description":"The next questions are about your relationships and sexual life. This information helps us provide better sexual health services. Remember, you can skip any question.",
-"strictrules":" If NO, please skip to Section C on page _ (Violence section)"
+  {
+    "sectionCode": "A",
+    "section": "About You",
+    "question": "2. How do you identify your gender? Choose the option that feels right for you:",
+    "options": [
+      "Transgender woman (assigned male at birth, identify as woman)",
+      "Transgender man (assigned female at birth, identify as man)",
+      "Hijra",
+      "Kothi",
+      "Panthi",
+      "Double-decker",
+      "Non-binary",
+      "Genderqueer",
+      "Man",
+      "Woman",
+      "Other (please specify)",
+      "Prefer not to say"
+    ],
+    "instruct": " Choose the option that feels right for you:"
+  },
 
-},
+  {
+    "sectionCode": "A",
+    "section": "About You",
+    "question": "3. Who are you attracted to? (Your sexual orientation)",
+    "options": [
+      "Only men",
+      "Only women",
+      "Both men and women",
+      "All genders/pansexual",
+      "Not sexually attracted to anyone (asexual)",
+      "Queer (I don't fit into categories)",
+      "Still figuring it out",
+      "Prefer not to say"
+    ]
+  },
 
-{
+  {
+    "sectionCode": "A",
+    "section": "About You",
+    "question": "4. Where were you born? (Your native place/birthplace)",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttar Pradesh",
+      "Uttarakhand",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi (NCT)",
+      "Jammu and Kashmir",
+      "Ladakh",
+      "Lakshadweep",
+      "Puducherry",
+      "Born outside India",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "About You",
+    "question": "5.  Where do you currently live?",
+    "options": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttar Pradesh",
+      "Uttarakhand",
+      "West Bengal",
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi (NCT)",
+      "Jammu and Kashmir",
+      "Ladakh",
+      "Lakshadweep",
+      "Puducherry",
+      "Born outside India",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "About You",
+    "question": "5a.  What type of area do you live in?",
+    "options": [
+      "Big city/Metro (population over 10 lakh)",
+      "Small city/Town (population 1 lakh - 10 lakh)",
+      "Town (population under 1 lakh)",
+      "Village/Rural area",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "6. Is your current place of residence the same as your birthplace?",
+    "options": [
+      "Yes, I live where I was born (Skip to question 8)",
+      "No, I migrated/moved to a different place (Continue to question 7)",
+      "Prefer not to say (Skip to question 8)"
+    ],
+    "description": "These questions help us understand migration patterns within our community.",
+    "strictrules": "Programmer Note: Auto fill Q6=Yes, if Q4=Q5 & Skip to Q8➤ If you live where you were born, skip to question 8[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "7.   If you migrated/moved: When did you come to your current location?",
+    "options": [
+      "0-5 years ago",
+      "5-10 years ago",
+      "10-15 years ago",
+      "Over 15 years ago",
+      "Don't remember",
+      "Prefer not to say"
+    ],
+      "note": "If you live where you were born, skip to question 8",
+      "rules":"[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
+
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "7a. Did you migrate/move alone?",
+    "options": [
+      "Yes, I moved alone",
+      "No, I moved with family",
+      "No, I moved with friends/community members",
+      "Don't know",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "7b. What was the main reason you migrated to your current location?",
+    "options": [
+      "Employment/job opportunities",
+      "Education",
+      "To escape discrimination or violence",
+      "Family reasons",
+      "To join LGBTQ+ community/find acceptance",
+      "Marriage",
+      "Better healthcare access",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "8. What is your religion?",
+    "options": [
+      "Hindu",
+      "Muslim",
+      "Christian",
+      "Sikh",
+      "Buddhist",
+      "Jain",
+      "No religion/Atheist",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "9. Do you belong to any of these communities?",
+    "options": [
+      "Scheduled Caste (SC)",
+      "Scheduled Tribe (ST)",
+      "Other Backward Class (OBC)",
+      "General category",
+      "Not sure",
+      "Prefer not to say"
+    ],
+    "instruct": " (This helps us understand if marginalized caste communities face additional challenges)"
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "10. What is the highest level of education you have completed?",
+    "options": [
+      "Never went to school",
+      "Primary school (up to Class 5)",
+      "Middle school (Class 6-8)",
+      "Secondary/Matriculation (Class 10)",
+      "Higher Secondary/Intermediate (Class 12)",
+      "Diploma or certificate course",
+      "Graduate degree (BA/BSc/BCom, etc.)",
+      "Postgraduate degree (MA/MSc/MBA, etc.)",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "11. What do you currently do for work/livelihood?",
+    "options": [
+      "Salaried job (full-time)",
+      "Daily wage work/casual labor",
+      "Self-employed/own business",
+      "Student",
+      "Looking for work",
+      "Sex work",
+      "Begging/badhai (traditional hijra work)",
+      "Housewife/homemaker",
+      "Not working currently",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "12. About how much money does your household earn each month?",
+    "options": [
+      "Less than ₹5,000",
+      "₹5,000 - ₹10,000",
+      "₹10,001 - ₹20,000",
+      "₹20,001 - ₹40,000",
+      "₹40,001 - ₹75,000",
+      "More than ₹75,000",
+      "Don't know",
+      "Prefer not to say"
+    ],
+    "instruct": "  (This includes income from all people you live with)"
+  },
+
+  {
+    "sectionCode": "A",
+    "section": "Migration History",
+    "question": "13. Who do you currently live with?",
+    "options": [
+      "Parents/family",
+      "Husband/wife",
+      "Partner (same-sex)",
+      "Friends/roommates",
+      "Alone",
+      "Hijra gharana/community",
+      "No stable housing/street",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+
+  {
     "sectionCode": "B",
-     "section":"Sexual Health and Relationships",
-     "question":"15. In the last 6 months, about how many people have you had sex with?",
-     "options":["None (no sex in last 6 months)","1 person","2-5 people","6-10 people","11-20 people","More than 20 people","Prefer not to say"]
-
-},
-
-{
+    "section": "Sexual Health and Relationships",
+    "question": "14. Have you ever had sex with someone?",
+    "options": ["Yes", "No"],
+    "description": "The next questions are about your relationships and sexual life. This information helps us provide better sexual health services. Remember, you can skip any question."
+   
+  },
+ {
   "sectionCode": "B",
-  "section":"Sexual Health and Relationships",
-  "question":"16. What is your current relationship situation?",
-  "options":["Single, not dating anyone","Dating someone (not living together)","Living with my partner","Married to opposite-sex spouse (arranged/family pressure)","Married to same-sex spouse/partner","Have multiple partners","Other","Prefer not to say"]
+  "section": "Sexual Health and Relationships",
+  "question": "14a. If yes, how old were you when you first had sex?",
+  "type": "number",
+  "placeholder": "Enter age in years",
+  "note": " If NO, please skip to Section C on page _ (Violence section)"
 },
-
-{
-  "sectionCode": "B",
-  "section":"Sexual Health and Relationships",
-  "question":"17. When you have anal sex, what role do you usually take?",
-  "options":["Receptive/bottom (receiving partner)","Insertive/top (penetrating partner)","Both, depending on the situation (versatile)","I don't have anal sex","Prefer not to say"],
-  "rules":"   (You can select more than one)"
-},
-
-{
+  {
     "sectionCode": "B",
-    "section":"Sexual Health and Relationships",
-    "question":"18. Do you have oral sex?",
-    "options":["Yes, I give oral sex","Yes, I receive oral sex","Yes, both","No","Prefer not to say"]
-},
+    "section": "Sexual Health and Relationships",
+    "question": "15. In the last 6 months, about how many people have you had sex with?",
+    "options": [
+      "None (no sex in last 6 months)",
+      "1 person",
+      "2-5 people",
+      "6-10 people",
+      "11-20 people",
+      "More than 20 people",
+      "Prefer not to say"
+    ]
+  },
 
-{
+  {
     "sectionCode": "B",
-    "section":"Sexual Health and Relationships",
-    "question":"19. In the last 6 months, how often did you or your partner(s) use condoms during anal sex?",
-    "options":["Every single time (100%)","Most of the time (75% or more)","Sometimes (about half the time)","Rarely (less than 25%)","Never","I haven't had anal sex in the last 6 months","Prefer not to say"]
-},
+    "section": "Sexual Health and Relationships",
+    "question": "16. What is your current relationship situation?",
+    "options": [
+      "Single, not dating anyone",
+      "Dating someone (not living together)",
+      "Living with my partner",
+      "Married to opposite-sex spouse (arranged/family pressure)",
+      "Married to same-sex spouse/partner",
+      "Have multiple partners",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
 
-{
-   "sectionCode": "B",
-   "section":"Sexual Health and Relationships",
-   "question":"20. Have you ever had group sex (sex with 3 or more people at the same time)?",
-   "options":["Yes, in the last 6 months","Yes, but not recently","No, never","Prefer not to say"]
-},
+  {
+    "sectionCode": "B",
+    "section": "Sexual Health and Relationships",
+    "question": "17. When you have anal sex, what role do you usually take?",
+    "options": [
+      "Receptive/bottom (receiving partner)",
+      "Insertive/top (penetrating partner)",
+      "Both, depending on the situation (versatile)",
+      "I don't have anal sex",
+      "Prefer not to say"
+    ],
+    "instruct": "   (You can select more than one)"
+  },
 
-{
-  "sectionCode": "B",
-  "section":"Sex Work",
-  "description":"Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
-  "question":"21. Have you ever exchanged sex for money, food, a place to stay, or other things you needed?",
-  "options":["Yes, I do this regularly now (within past month)","Yes, I did this in the past year","Yes, but not recently","No, never","Prefer not to say"]
-},
+  {
+    "sectionCode": "B",
+    "section": "Sexual Health and Relationships",
+    "question": "18. Do you have oral sex?",
+    "options": [
+      "Yes, I give oral sex",
+      "Yes, I receive oral sex",
+      "Yes, both",
+      "No",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "B",
-  "section":"Sex Work",
-  "question":"22. In the past month, has any client forced you to have sex without a condom when you wanted to use one?",
-  "options":["Yes, this happened several times","Yes, this happened once","No","Don't remember","Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence ",
-  "question": "23. Someone has pushed, shoved, or grabbed me roughly",
-  "options": ["Yes, this has happened", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence",
-  "question": "24. Someone has slapped, hit, kicked, or beat me",
-  "options": ["Yes, this has happened", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence",
-  "question": "25. Someone has choked, strangled, or tried to drown me",
-  "options": ["Yes, this has happened", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence",
-  "question": "26. Someone has attacked me with a weapon (knife, stick, acid, etc.)",
-  "options": ["Yes, this has happened", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence",
-  "question": "27. Someone has burned or scarred me on purpose",
-  "options": ["Yes, this has happened", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Physical Violence",
-  "question": "28. Who hurt you in these ways? Select all that apply.",
-  "options": ["Family member (parent, sibling, relative)", "Intimate partner (boyfriend, girlfriend, spouse)", "Friend or acquaintance", "Stranger", "Police or security personnel", "Healthcare worker", "Employer or co-worker", "Classmate or teacher", "Community member", "Client (if sex work)", "Other (specify)", "Prefer not to say"],
-  "rules": "Select all that apply"
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "29. Someone touched me sexually when I didn't want them to",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "30. Someone made me touch them sexually when I didn't want to",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "31. Someone made me watch sexual acts or pornography against my will",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "32. Someone forced me to perform oral sex",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "33. Someone forced me to have anal or vaginal sex without a condom when I wanted to use one",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "34. Someone forced me to have anal sex",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "35. Someone forced me to have vaginal sex",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "36. Someone put objects or fingers inside me sexually without my consent",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "37. Someone forced me to participate in sex with multiple people",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence",
-  "question": "38. Someone blackmailed or threatened me to get sex",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "39. Who did this to you? Select all that apply.",
-  "options": ["Family member (parent, sibling, relative)", "Intimate partner (boyfriend, girlfriend, spouse)", "Friend or acquaintance", "Stranger", "Police or security personnel", "Healthcare worker", "Employer or co-worker", "Classmate or teacher", "Community member", "Client (if sex work)", "Other (specify)", "Prefer not to say"],
-  "rules": "Select all that apply",
-  "skipLogic": "If ALL Q29-Q38 = 'No' or 'Prefer not to say', SKIP Q39"
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "40. After this happened, did you go to a doctor or health facility?",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Sexual Violence ",
-  "question": "41. Why didn't you seek medical care? Select all that apply.",
-  "options": ["I didn't think it was serious enough", "I was ashamed or embarrassed", "I was afraid they would blame me", "I couldn't afford it", "I didn't know where to go", "I was afraid my family would find out", "I was threatened not to tell anyone", "Healthcare staff are discriminatory against LGBTQ+ people", "Other (specify)", "Prefer not to say"],
-  "rules": "Select all that apply"
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "42. Someone has insulted, humiliated, or made fun of me because of my gender identity or sexual orientation",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "43. Someone has threatened to hurt me or people I care about",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "44. Someone has threatened to 'out' me (reveal my identity) against my will",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "45. Someone has isolated me from friends or family",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "46. Someone has controlled what I do, who I see, or where I go",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "47. Someone has destroyed my belongings or things that matter to me",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "48. Someone has used religious or cultural beliefs to make me feel ashamed of who I am",
-  "options": ["Yes", "No", "Prefer not to say"],
-  "skipLogic": "If ALL Q42-Q48 = 'No' or 'Prefer not to say', SKIP Q49"
-},
-{
-  "sectionCode": "C",
-  "section": "Emotional/Psychological Violence",
-  "question": "49. Who did this to you? Select all that apply.",
-  "options": ["Family member (parent, sibling, relative)", "Intimate partner (boyfriend, girlfriend, spouse)", "Friend or acquaintance", "Stranger", "Police or security personnel", "Healthcare worker", "Employer or co-worker", "Classmate or teacher", "Community member", "Client (if sex work)", "Other (specify)", "Prefer not to say"],
-  "rules": "Select all that apply",
-  "condition": "Show ONLY if ANY Q42-Q48 = 'Yes'"
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "50. Someone has stopped me from working or earning money",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "51. Someone has taken my money or income without my permission",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "52. Someone has controlled my access to money or made all financial decisions for me",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "53. Someone has refused to give me money for basic needs (food, medicine, etc.)",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "54. Someone has denied me inheritance or property rights because of my identity",
-  "options": ["Yes", "No", "Prefer not to say"],
-  "skipLogic": "If ALL Q50-Q54 = 'No' or 'Prefer not to say', SKIP Q55"
-},
-{
-  "sectionCode": "C",
-  "section": "Economic violence",
-  "question": "55. Who did this to you? Select all that apply.",
-  "options": ["Family member (parent, sibling, relative)", "Intimate partner (boyfriend, girlfriend, spouse)", "Friend or acquaintance", "Stranger", "Police or security personnel", "Healthcare worker", "Employer or co-worker", "Classmate or teacher", "Community member", "Client (if sex work)", "Other (specify)", "Prefer not to say"],
-  "rules": "Select all that apply",
-  "condition": "Show ONLY if ANY Q50-Q54 = 'Yes'"
-},
-{
-  "sectionCode": "C",
-  "section": "Verbal Abuse and Hurtful Words",
-  "description": "Sometimes people hurt us with words. These questions ask about verbal harassment and emotional abuse you may have experienced.",
-  "question": "56. How often does this kind of verbal abuse happen to you?",
-  "options": ["Every day", "Several times a week", "Once a week", "A few times a month", "Rarely", "Never/not at all"]
-},
-{
-  "sectionCode": "C",
-  "section": "Online Harassment and Cyber Violence",
-  "question": "57.Do you use any dating apps or online platforms to meet sexual or romantic partners?",
-  "options": ["Yes  (continue to next questions) ", "No (skip to question 60)"]
-},
-{
-  "sectionCode": "C",
-  "section": "Online Harassment and Cyber Violence",
-  "question": "58. Have been harassed during the past year more than once while using the platform?",
-  "options": ["Yes  (continue to next questions)", "No (skip to question 60)"]
-},
-{
-  "sectionCode": "C",
-  "section": "Online Harassment and Cyber Violence",
-  "question": "59. Did you report the cyber violence to the platform or authorities?",
-  "options": ["Yes, to the app/platform ", "Yes, to police ", "Yes, to both","No ", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "60. My family has verbally abused me because of my gender identity or sexual orientation",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "61. My family has physically hurt me because of my gender identity or sexual orientation",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "62. My family has forced me to marry someone I didn't want to marry",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "63. My family has forced me to undergo religious rituals or ceremonies to 'change' or 'cure' me",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "64. My family has forced me to see a doctor or therapist to 'change' or 'cure' me",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "65. My family has stopped paying for my education because of my identity",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "66. My family has threatened to disown or cut me off if I don't hide my identity",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "67. Have you ever been kicked out of your home or forced to leave by your family because of your gender identity or sexual orientation?",
-  "options": ["Yes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "68. If you have experienced intimate partner violence, was the perpetrator:",
-  "options": ["Same-sex partner", "Opposite-sex partner (husband/wife)", "Both", "Not applicable"]
-},
-{
-  "sectionCode": "C",
-  "section": "Family Based Violence and Rejection",
-  "question": "69. How long have you been estranged from your family (if applicable)?",
-  "options": ["Not estranged", "<6 months", "6 months-1 year", "1-3 years", "3-5 years", ">5 years"]
-},
-  
+  {
+    "sectionCode": "B",
+    "section": "Sexual Health and Relationships",
+    "question": "19. In the last 6 months, how often did you or your partner(s) use condoms during anal sex?",
+    "options": [
+      "Every single time (100%)",
+      "Most of the time (75% or more)",
+      "Sometimes (about half the time)",
+      "Rarely (less than 25%)",
+      "Never",
+      "I haven't had anal sex in the last 6 months",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "B",
+    "section": "Sexual Health and Relationships",
+    "question": "20. Have you ever had group sex (sex with 3 or more people at the same time)?",
+    "options": [
+      "Yes, in the last 6 months",
+      "Yes, but not recently",
+      "No, never",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "B",
+    "section": "Sex Work",
+    "description": "Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
+    "question": "21. Have you ever exchanged sex for money, food, a place to stay, or other things you needed?",
+     "options": [
+    "Yes, I do this regularly now (within past month)",
+    "Yes, I did this in the past year",
+    "Yes, but not recently",
+    "No, never",
+    "Prefer not to say"
+  ],
+  "optionrule":"If you answered 'No, never' - skip next 2 questions, go to Section C"
+  },
+  {
+    "sectionCode": "B",
+    "section": "Sex Work",
+    "description": "Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
+    "question": "21 a. About how many clients do you see in a typical week",
+     "type": "number",
+     "placeholder": "Enter counts"
+  },
+
+  {
+    "sectionCode": "B",
+    "section": "Sex Work",
+    "question": "22. In the past month, has any client forced you to have sex without a condom when you wanted to use one?",
+    "options": [
+      "Yes, this happened several times",
+      "Yes, this happened once",
+      "No",
+      "Don't remember",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence ",
+    "question": "23. Someone has pushed, shoved, or grabbed me roughly",
+    "options": ["Yes, this has happened", "No", "Prefer not to say"]
+    
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence",
+    "question": "24. Someone has slapped, hit, kicked, or beat me",
+    "options": ["Yes, this has happened", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence",
+    "question": "25. Someone has choked, strangled, or tried to drown me",
+    "options": ["Yes, this has happened", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence",
+    "question": "26. Someone has attacked me with a weapon (knife, stick, acid, etc.)",
+    "options": ["Yes, this has happened", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence",
+    "question": "27. Someone has burned or scarred me on purpose",
+    "options": ["Yes, this has happened", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Physical Violence",
+    "question": "28. Who hurt you in these ways? Select all that apply.",
+    "options": [
+      "Family member (parent, sibling, relative)",
+      "Intimate partner (boyfriend, girlfriend, spouse)",
+      "Friend or acquaintance",
+      "Stranger",
+      "Police or security personnel",
+      "Healthcare worker",
+      "Employer or co-worker",
+      "Classmate or teacher",
+      "Community member",
+      "Client (if sex work)",
+      "Other (specify)",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "29. Someone touched me sexually when I didn't want them to",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "30. Someone made me touch them sexually when I didn't want to",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "31. Someone made me watch sexual acts or pornography against my will",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "32. Someone forced me to perform oral sex",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "33. Someone forced me to have anal or vaginal sex without a condom when I wanted to use one",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "34. Someone forced me to have anal sex",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "35. Someone forced me to have vaginal sex",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "36. Someone put objects or fingers inside me sexually without my consent",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "37. Someone forced me to participate in sex with multiple people",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence",
+    "question": "38. Someone blackmailed or threatened me to get sex",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "39. Who did this to you? Select all that apply.",
+    "options": [
+      "Family member (parent, sibling, relative)",
+      "Intimate partner (boyfriend, girlfriend, spouse)",
+      "Friend or acquaintance",
+      "Stranger",
+      "Police or security personnel",
+      "Healthcare worker",
+      "Employer or co-worker",
+      "Classmate or teacher",
+      "Community member",
+      "Client (if sex work)",
+      "Other (specify)",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply",
+    "skipLogic": "If ALL Q29-Q38 = 'No' or 'Prefer not to say', SKIP Q39"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "40. After this happened, did you go to a doctor or health facility?",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Sexual Violence ",
+    "question": "41. Why didn't you seek medical care? Select all that apply.",
+    "options": [
+      "I didn't think it was serious enough",
+      "I was ashamed or embarrassed",
+      "I was afraid they would blame me",
+      "I couldn't afford it",
+      "I didn't know where to go",
+      "I was afraid my family would find out",
+      "I was threatened not to tell anyone",
+      "Healthcare staff are discriminatory against LGBTQ+ people",
+      "Other (specify)",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "42. Someone has insulted, humiliated, or made fun of me because of my gender identity or sexual orientation",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "43. Someone has threatened to hurt me or people I care about",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "44. Someone has threatened to 'out' me (reveal my identity) against my will",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "45. Someone has isolated me from friends or family",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "46. Someone has controlled what I do, who I see, or where I go",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "47. Someone has destroyed my belongings or things that matter to me",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "48. Someone has used religious or cultural beliefs to make me feel ashamed of who I am",
+    "options": ["Yes", "No", "Prefer not to say"],
+    "skipLogic": "If ALL Q42-Q48 = 'No' or 'Prefer not to say', SKIP Q49"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Emotional/Psychological Violence",
+    "question": "49. Who did this to you? Select all that apply.",
+    "options": [
+      "Family member (parent, sibling, relative)",
+      "Intimate partner (boyfriend, girlfriend, spouse)",
+      "Friend or acquaintance",
+      "Stranger",
+      "Police or security personnel",
+      "Healthcare worker",
+      "Employer or co-worker",
+      "Classmate or teacher",
+      "Community member",
+      "Client (if sex work)",
+      "Other (specify)",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply",
+    "condition": "Show ONLY if ANY Q42-Q48 = 'Yes'"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "50. Someone has stopped me from working or earning money",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "51. Someone has taken my money or income without my permission",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "52. Someone has controlled my access to money or made all financial decisions for me",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "53. Someone has refused to give me money for basic needs (food, medicine, etc.)",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "54. Someone has denied me inheritance or property rights because of my identity",
+    "options": ["Yes", "No", "Prefer not to say"],
+    "skipLogic": "If ALL Q50-Q54 = 'No' or 'Prefer not to say', SKIP Q55"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Economic violence",
+    "question": "55. Who did this to you? Select all that apply.",
+    "options": [
+      "Family member (parent, sibling, relative)",
+      "Intimate partner (boyfriend, girlfriend, spouse)",
+      "Friend or acquaintance",
+      "Stranger",
+      "Police or security personnel",
+      "Healthcare worker",
+      "Employer or co-worker",
+      "Classmate or teacher",
+      "Community member",
+      "Client (if sex work)",
+      "Other (specify)",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply",
+    "condition": "Show ONLY if ANY Q50-Q54 = 'Yes'"
+  },
+  {
+    "sectionCode": "C",
+    "section": "Verbal Abuse and Hurtful Words",
+    "description": "Sometimes people hurt us with words. These questions ask about verbal harassment and emotional abuse you may have experienced.",
+    "question": "56. How often does this kind of verbal abuse happen to you?",
+    "options": [
+      "Every day",
+      "Several times a week",
+      "Once a week",
+      "A few times a month",
+      "Rarely",
+      "Never/not at all"
+    ]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Online Harassment and Cyber Violence",
+    "question": "57.Do you use any dating apps or online platforms to meet sexual or romantic partners?",
+    "options": [
+      "Yes  (continue to next questions) ",
+      "No (skip to question 60)"
+    ]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Online Harassment and Cyber Violence",
+    "question": "58. Have been harassed during the past year more than once while using the platform?",
+    "options": ["Yes  (continue to next questions)", "No (skip to question 60)"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Online Harassment and Cyber Violence",
+    "question": "59. Did you report the cyber violence to the platform or authorities?",
+    "options": [
+      "Yes, to the app/platform ",
+      "Yes, to police ",
+      "Yes, to both",
+      "No ",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "60. My family has verbally abused me because of my gender identity or sexual orientation",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "61. My family has physically hurt me because of my gender identity or sexual orientation",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "62. My family has forced me to marry someone I didn't want to marry",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "63. My family has forced me to undergo religious rituals or ceremonies to 'change' or 'cure' me",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "64. My family has forced me to see a doctor or therapist to 'change' or 'cure' me",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "65. My family has stopped paying for my education because of my identity",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "66. My family has threatened to disown or cut me off if I don't hide my identity",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "67. Have you ever been kicked out of your home or forced to leave by your family because of your gender identity or sexual orientation?",
+    "options": ["Yes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "68. If you have experienced intimate partner violence, was the perpetrator:",
+    "options": [
+      "Same-sex partner",
+      "Opposite-sex partner (husband/wife)",
+      "Both",
+      "Not applicable"
+    ]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Family Based Violence and Rejection",
+    "question": "69. How long have you been estranged from your family (if applicable)?",
+    "options": [
+      "Not estranged",
+      "<6 months",
+      "6 months-1 year",
+      "1-3 years",
+      "3-5 years",
+      ">5 years"
+    ]
+  },
+
   {
     "sectionCode": "C",
     "section": "Legal Identity Documents",
@@ -510,7 +881,7 @@
     "question": "75. I have been questioned, harassed, or denied service because my ID doesn't match my appearance or affirmed identity",
     "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
   },
-  
+
   {
     "sectionCode": "C",
     "section": "Education System Discrimination",
@@ -535,430 +906,605 @@
     "question": "79. School or college authorities refused to use my affirmed name or correct pronouns",
     "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
   },
-{
-  "sectionCode": "C",
-  "section": "Government Services and Systems",
-  "question": "80. I have been denied government welfare benefits or subsidies (ration card, scholarships, pensions, etc.) because of my identity",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Government Services and Systems",
-  "question": "81. I have been denied services at government offices (passport office, tehsildar office, municipality, etc.) due to discrimination",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Government Services and Systems",
-  "question": "82. I have been mistreated, harassed, or asked to pay bribes by government officials because of my identity",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Government Services and Systems",
-  "question": "83. I have faced difficulties accessing legal services or representation in courts due to my identity",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Government Services and Systems",
-  "question": "84. I have been unable to open a bank account or faced difficulties with banking services due to ID issues or discrimination",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Systemic Barriers to Rights",
-  "question": "85. I have been denied voting or faced difficulties voting because my ID doesn't match my appearance",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Systemic Barriers to Rights",
-  "question": "86. I am unable to legally marry the person I want to because same-sex marriage is not recognized in India",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "C",
-  "section": "Systemic Barriers to Rights",
-  "question": "87. Overall, I feel that laws and government policies in India do not protect my rights as an LGBTQ+ person",
-  "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
-},
-{
-  "sectionCode": "D",
-  "section": "General Substance Use",
-  "question": "88. Have you ever used any of the following substances? (Check all that apply)",
-  "options": ["None", "Cannabis/Marijuana/Ganja", "Cocaine", "Heroin/Brown sugar/Smack", "Methamphetamine/Crystal meth/Ice", "MDMA/Ecstasy/Molly", "Ketamine", "GHB/GBL", "Mephedrone/M-CAT", "Amyl nitrites/Poppers", "Prescription drugs (non-medical use)", "Inhalants (glue, petrol, etc.)", "Other"]
-},
-{
-  "sectionCode": "D",
-  "section": "General Substance Use",
-  "question": "89. In the past 6 months, how frequently have you used any substances (other than alcohol or tobacco)?",
-  "options": ["Daily or almost daily", "Weekly", "Monthly", "Less than monthly", "Not in past 6 months"]
-},
-{
-  "sectionCode": "D",
-  "section": "Chemsex (Using Drugs During Sex)",
-  "question": "90. Have you ever used drugs specifically to initiate, enhance, or prolong sexual activity? (Do not include alcohol, tobacco, or cannabis)",
-  "options": ["Yes, in the past month", "Yes, in the past 6 months", "Yes, but not recently", "No, never"]
-},
-{
-  "sectionCode": "D",
-  "section": "Chemsex (Using Drugs During Sex)",
-  "question": "90a. What substances do you most commonly use for sex? (Check top 3)",
-  "options": ["Methamphetamine", "GHB/GBL", "Cocaine", "MDMA", "Ketamine", "Mephedrone", "Poppers"]
-},
-{
-  "sectionCode": "D",
-  "section": "Injection Drug Use",
-  "question": "91. Have you ever injected drugs (using a needle/syringe)?",
-  "options": ["Yes, currently (within past month)", "Yes, in the past year", "Yes, but not recently", "No, never"]
-},
-{
-  "sectionCode": "D",
-  "section": "Injection Drug Use",
-  "question": "91a. What substances have you injected? (Check all that apply)",
-  "options": ["Heroin/Brown sugar", "Methamphetamine", "Cocaine", "Ketamine", "Other"]
-},
-{
-  "sectionCode": "D",
-  "section": "Injection Drug Use",
-  "question": "92. Have you ever been tested for Hepatitis C?",
-  "options": ["Yes, positive", "Yes, negative", "Yes, don't know result", "No, never tested"]
-},
-{
-  "sectionCode": "D",
-  "section": "Alcohol Use",
-  "question": "93. Do you drink alcohol?",
-  "options": ["Yes (continue)", "No (skip to Section E - Mental Health)"]
-},
-{
-  "sectionCode": "D",
-  "section": "Alcohol Use",
-  "question": "93a. How often do you drink alcohol?",
-  "options": ["Daily", "4-6 times/week", "2-3 times/week", "Weekly", "Monthly or less"]
-},
-{
-  "sectionCode": "D",
-  "section": "Alcohol Use",
-  "question": "93b. On a typical day when you drink, how many drinks do you have?",
-  "options": ["1-2", "3-4", "5-6", "7-9", "10 or more"]
-},
-{
-  "sectionCode": "D",
-  "section": "Alcohol Use",
-  "question": "93c. How often do you have 6 or more drinks on one occasion?",
-  "options": ["Daily/almost daily", "Weekly", "Monthly", "Less than monthly", "Never"]
-},
-{
-  "sectionCode": "E",
-  "section": "Depression and Anxiety (PHQ-4)",
-  "question": "94. Over the past 2 weeks, how often have you been bothered by feeling nervous, anxious, or on edge?",
-  "options": ["Not at all", "Several days", "More than half the days", "Nearly every day"]
-},
-{
-  "sectionCode": "E",
-  "section": "Depression and Anxiety (PHQ-4)",
-  "question": "95. Over the past 2 weeks, how often have you been bothered by not being able to stop or control worrying?",
-  "options": ["Not at all", "Several days", "More than half the days", "Nearly every day"]
-},
-{
-  "sectionCode": "E",
-  "section": "Depression and Anxiety (PHQ-4)",
-  "question": "96. Over the past 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless?",
-  "options": ["Not at all", "Several days", "More than half the days", "Nearly every day"]
-},
-{
-  "sectionCode": "E",
-  "section": "Depression and Anxiety (PHQ-4)",
-  "question": "97. Over the past 2 weeks, how often have you been bothered by having little interest or pleasure in doing things?",
-  "options": ["Not at all", "Several days", "More than half the days", "Nearly every day"]
-},
-{
-  "sectionCode": "E",
-  "section": "Mental Health Symptoms",
-  "question": "98. If yes, what diagnosis?",
-  "type": "text"
-},
-{
-  "sectionCode": "E",
-  "section": "Mental Health Symptoms",
-  "question": "99. Are you currently taking any medications for mental health?",
-  "options": ["Yes, regularly", "Yes, sometimes", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "E",
-  "section": "Resilience and Coping",
-  "question": "100. When facing problems, what do you typically do? (Check all that apply)",
-  "options": ["Talk to friends/family", "Seek professional help (counselor/therapist)", "Use substances (alcohol/drugs)", "Isolate myself", "Engage in hobbies/activities", "Prayer/spiritual practices", "Self-harm", "Do nothing/ignore it", "Other"],
-  "rules": "Select all that apply"
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "101. Have you ever accessed healthcare services (doctor, clinic, hospital)?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q103"
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "101a. When was your last healthcare visit?",
-  "options": ["Within past month", "1-6 months ago", "6-12 months ago", "More than 1 year ago"]
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "101b. Where do you usually go for healthcare?",
-  "options": ["Government hospital/Primary Health Center", "Private clinic/hospital", "Sabrang or other LGBTQ-friendly clinic", "NGO clinic", "Traditional healer/vaid/hakim", "Self-medication/pharmacy only", "Other"]
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "101c. Have you disclosed your sexual orientation or gender identity to healthcare providers?",
-  "options": ["Yes, always", "Yes, sometimes", "Rarely", "Never", "Not applicable"]
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "101d. Do you have health insurance or any health coverage?",
-  "options": ["Yes, employer", "Yes, government (Ayushman Bharat, etc.)", "Yes, private", "No"]
-},
-{
-  "sectionCode": "F",
-  "section": "Healthcare Access",
-  "question": "102. What are the main barriers to accessing healthcare? (Check all that apply)",
-  "options": ["Cannot afford it", "Fear of discrimination", "Too far/no transportation", "Don't know where to go", "Long waiting times", "Fear of family finding out", "Previous bad experiences", "No barriers"],
-  "rules": "Select all that apply"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "103. Have you ever been tested for HIV?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q105"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "103a. When was your most recent HIV test?",
-  "options": ["Within past 3 months", "3-6 months ago", "6-12 months ago", "More than 1 year ago"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "103b. What was the result of your most recent HIV test?",
-  "options": ["Negative", "Positive", "Didn’t get results", "Don't know", "Prefer not to say"],
-  "skipLogic": "If Negative, go to Q105"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "103c. [If Positive] Are you currently on antiretroviral treatment (ART)?",
-  "options": ["Yes, taking regularly", "Yes, but missing doses often", "No, not on treatment", "Prefer not to say"],
-  "condition": "Show only if Q103b = Positive"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "104. In the past 12 months, have you been diagnosed with any sexually transmitted infections (STIs)?",
-  "options": ["Yes", "No", "Don't know", "Prefer not to say"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "104a. [If Yes] Which STI(s)? (Check all that apply)",
-  "options": ["Gonorrhea", "Syphilis", "Chlamydia", "Herpes", "HPV/Genital warts", "Hepatitis B", "Other", "Don't know which one"],
-  "rules": "Select all that apply",
-  "condition": "Show only if Q104 = Yes"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV and STI Testing",
-  "question": "104b. Have you received treatment for the STI(s)?",
-  "options": ["Yes, completed treatment", "Yes, currently in treatment", "No", "Don't know"],
-  "condition": "Show only if Q104 = Yes"
-},
-{
-  "sectionCode": "F",
-  "section": "HIV Prevention (PrEP and PEP)",
-  "question": "105. Have you heard of PrEP (Pre-Exposure Prophylaxis - daily pills to prevent HIV)?",
-  "options": ["Yes, I understand what it is", "Yes, but don't know details", "No, never heard of it"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV Prevention (PrEP and PEP)",
-  "question": "105a. Are you currently taking PrEP?",
-  "options": ["Yes, regularly", "Yes, but miss doses often", "No, but interested", "No, not interested", "Not eligible"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV Prevention (PrEP and PEP)",
-  "question": "105b. Have you heard of PEP (Post-Exposure Prophylaxis - emergency pills after HIV exposure)?",
-  "options": ["Yes, I understand what it is", "Yes, but don't know details", "No, never heard of it"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV Prevention (PrEP and PEP)",
-  "question": "105c. Have you ever used PEP after a potential HIV exposure?",
-  "options": ["Yes", "No, but needed it", "No, never needed it", "Don't know what PEP is"]
-},
-{
-  "sectionCode": "F",
-  "section": "HIV Prevention (PrEP and PEP)",
-  "question": "105d. Have you received the HPV vaccine (prevents some cancers and genital warts)?",
-  "options": ["Yes, completed series", "Yes, partially", "No, but interested", "No, not interested", "Don't know"]
-},
-{
-  "sectionCode": "F",
-  "section": "Gender-Affirming Care",
-  "question": "106. Are you currently using hormones for gender affirmation?",
-  "options": ["Yes, prescribed by doctor", "Yes, self-administering", "No, but want to", "No, not interested", "Not applicable"],
-  "skipLogic": "If 'Not applicable' or 'No, not interested', skip to Section G"
-},
-{
-  "sectionCode": "F",
-  "section": "Gender-Affirming Care",
-  "question": "106a. [If Yes] Where do you obtain hormones?",
-  "options": ["Healthcare provider/doctor", "Pharmacy without prescription", "Friends/community members", "Online", "Other"],
-  "rules": "Select all that apply",
-  "condition": "Show only if Q106 = 'Yes, prescribed by doctor' OR 'Yes, self-administering'"
-},
-{
-  "sectionCode": "F",
-  "section": "Gender-Affirming Care",
-  "question": "106b. Have you undergone any gender-affirming surgeries?",
-  "options": ["Yes", "No, but planning to", "No, not interested", "No, cannot afford", "Not applicable"]
-},
-{
-  "sectionCode": "F",
-  "section": "Gender-Affirming Care",
-  "question": "106c. Do you receive regular medical monitoring while using hormones?",
-  "options": ["Yes, regularly", "Sometimes", "No", "Not applicable"]
-},
-{
-  "sectionCode": "G",
-  "section": "Family Relationships",
-  "question": "107. Does your family know about your sexual orientation or gender identity?",
-  "options": ["Yes, everyone knows", "Yes, some family members know", "No, none know", "Prefer not to say"],
-  "skipLogic": "If 'No, none know', skip to Q108 (Social Support Networks)"
-},
-{
-  "sectionCode": "G",
-  "section": "Family Relationships",
-  "question": "107a. [If Yes] How did they react when they found out?",
-  "options": ["Very accepting", "Somewhat accepting", "Neutral/indifferent", "Somewhat rejecting", "Very rejecting"],
-  "condition": "Show only if Q107 = Yes"
-},
-{
-  "sectionCode": "G",
-  "section": "Family Relationships",
-  "question": "107b. If you are married to an opposite-sex spouse, does your spouse know about your sexual orientation?",
-  "options": ["Yes", "No", "Not applicable (not married to opposite sex)"]
-},
-{
-  "sectionCode": "G",
-  "section": "Social Support Networks",
-  "question": "108. How many close friends do you have that you can confide in?",
-  "options": ["None", "1-2", "3-5", "6-10", "More than 10"],
-  "skipLogic": "If 'None', skip Q109"
-},
-{
-  "sectionCode": "G",
-  "section": "Social Support Networks",
-  "question": "109. How many of your close friends are LGBTQ+?",
-  "options": ["None", "A few", "About half", "Most", "All"],
-  "condition": "Show only if Q108 != None"
-},
-{
-  "sectionCode": "G",
-  "section": "Social Support Networks",
-  "question": "110. Are you part of a hijra gharana or community?",
-  "options": ["Yes", "No", "Not applicable (not hijra)"]
-},
-{
-  "sectionCode": "G",
-  "section": "Social Support Networks",
-  "question": "110a. [If Yes] How would you describe your relationship with your hijra community?",
-  "options": ["Very supportive", "Somewhat supportive", "Neutral", "Somewhat exploitative", "Very exploitative"],
-  "condition": "Show only if Q110 = Yes"
-},
-{
-  "sectionCode": "G",
-  "section": "Opinion Leaders and Media Influence",
-  "question": "111. Where do you get most of your information about LGBTQ+ issues? (Check top 2)",
-  "options": ["Social media", "LGBTQ+ organizations", "Friends/community", "News media", "Healthcare providers", "Online forums/websites", "Support groups", "Other"],
-  "rules": "Select top 2"
-},
-{
-  "sectionCode": "H",
-  "section": "Awareness of Legal Rights",
-  "question": "112. Are you aware that Section 377 (law criminalizing homosexuality) was struck down by the Supreme Court in 2018?",
-  "options": ["Yes", "No", "Not sure"]
-},
-{
-  "sectionCode": "H",
-  "section": "Awareness of Legal Rights",
-  "question": "113. Are you aware of the Transgender Persons (Protection of Rights) Act, 2019?",
-  "options": ["Yes, and I know what rights it provides", "Yes, but don't know details", "No, never heard of it"]
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "114. Are you aware of any organizations or services that provide support to LGBTQ+ people?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q115"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "114a. [If Yes] Which services are you aware of? (Check all that apply)",
-  "options": ["LGBTQ+ community centers", "Crisis helplines", "Legal aid services", "Mental health counseling", "HIV/STI testing services", "Support groups", "Safe houses/shelter", "Other"],
-  "rules": "Select all that apply",
-  "condition": "Show only if Q114 = Yes"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "115. Have you ever used any of these support services?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q116"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "115a. [If Yes] How helpful were these services?",
-  "options": ["Very helpful", "Somewhat helpful", "Not very helpful", "Not helpful at all"],
-  "condition": "Show only if Q115 = Yes"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "114. Are you aware of any organizations or services that provide support to LGBTQ+ people?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q115"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "114a. [If Yes] Which services are you aware of? (Check all that apply)",
-  "options": ["LGBTQ+ community centers", "Crisis helplines", "Legal aid services", "Mental health counseling", "HIV/STI testing services", "Support groups", "Safe houses/shelter", "Other"],
-  "rules": "Select all that apply",
-  "condition": "Show only if Q114 = Yes"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "115. Have you ever used any of these support services?",
-  "options": ["Yes", "No"],
-  "skipLogic": "If No, skip to Q116"
-},
-{
-  "sectionCode": "I",
-  "section": "Awareness of Services",
-  "question": "115a. [If Yes] How helpful were these services?",
-  "options": ["Very helpful", "Somewhat helpful", "Not very helpful", "Not helpful at all"],
-  "condition": "Show only if Q115 = Yes"
-},
+  {
+    "sectionCode": "C",
+    "section": "Government Services and Systems",
+    "question": "80. I have been denied government welfare benefits or subsidies (ration card, scholarships, pensions, etc.) because of my identity",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Government Services and Systems",
+    "question": "81. I have been denied services at government offices (passport office, tehsildar office, municipality, etc.) due to discrimination",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Government Services and Systems",
+    "question": "82. I have been mistreated, harassed, or asked to pay bribes by government officials because of my identity",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Government Services and Systems",
+    "question": "83. I have faced difficulties accessing legal services or representation in courts due to my identity",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Government Services and Systems",
+    "question": "84. I have been unable to open a bank account or faced difficulties with banking services due to ID issues or discrimination",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Systemic Barriers to Rights",
+    "question": "85. I have been denied voting or faced difficulties voting because my ID doesn't match my appearance",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Systemic Barriers to Rights",
+    "question": "86. I am unable to legally marry the person I want to because same-sex marriage is not recognized in India",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "C",
+    "section": "Systemic Barriers to Rights",
+    "question": "87. Overall, I feel that laws and government policies in India do not protect my rights as an LGBTQ+ person",
+    "options": ["Yes", "No", "Not Applicable", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "D",
+    "section": "General Substance Use",
+    "question": "88. Have you ever used any of the following substances? (Check all that apply)",
+    "options": [
+      "None",
+      "Cannabis/Marijuana/Ganja",
+      "Cocaine",
+      "Heroin/Brown sugar/Smack",
+      "Methamphetamine/Crystal meth/Ice",
+      "MDMA/Ecstasy/Molly",
+      "Ketamine",
+      "GHB/GBL",
+      "Mephedrone/M-CAT",
+      "Amyl nitrites/Poppers",
+      "Prescription drugs (non-medical use)",
+      "Inhalants (glue, petrol, etc.)",
+      "Other"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "General Substance Use",
+    "question": "89. In the past 6 months, how frequently have you used any substances (other than alcohol or tobacco)?",
+    "options": [
+      "Daily or almost daily",
+      "Weekly",
+      "Monthly",
+      "Less than monthly",
+      "Not in past 6 months"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Chemsex (Using Drugs During Sex)",
+    "question": "90. Have you ever used drugs specifically to initiate, enhance, or prolong sexual activity? (Do not include alcohol, tobacco, or cannabis)",
+    "options": [
+      "Yes, in the past month",
+      "Yes, in the past 6 months",
+      "Yes, but not recently",
+      "No, never"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Chemsex (Using Drugs During Sex)",
+    "question": "90a. What substances do you most commonly use for sex? (Check top 3)",
+    "options": [
+      "Methamphetamine",
+      "GHB/GBL",
+      "Cocaine",
+      "MDMA",
+      "Ketamine",
+      "Mephedrone",
+      "Poppers"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Injection Drug Use",
+    "question": "91. Have you ever injected drugs (using a needle/syringe)?",
+    "options": [
+      "Yes, currently (within past month)",
+      "Yes, in the past year",
+      "Yes, but not recently",
+      "No, never"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Injection Drug Use",
+    "question": "91a. What substances have you injected? (Check all that apply)",
+    "options": [
+      "Heroin/Brown sugar",
+      "Methamphetamine",
+      "Cocaine",
+      "Ketamine",
+      "Other"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Injection Drug Use",
+    "question": "92. Have you ever been tested for Hepatitis C?",
+    "options": [
+      "Yes, positive",
+      "Yes, negative",
+      "Yes, don't know result",
+      "No, never tested"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Alcohol Use",
+    "question": "93. Do you drink alcohol?",
+    "options": ["Yes (continue)", "No (skip to Section E - Mental Health)"]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Alcohol Use",
+    "question": "93a. How often do you drink alcohol?",
+    "options": [
+      "Daily",
+      "4-6 times/week",
+      "2-3 times/week",
+      "Weekly",
+      "Monthly or less"
+    ]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Alcohol Use",
+    "question": "93b. On a typical day when you drink, how many drinks do you have?",
+    "options": ["1-2", "3-4", "5-6", "7-9", "10 or more"]
+  },
+  {
+    "sectionCode": "D",
+    "section": "Alcohol Use",
+    "question": "93c. How often do you have 6 or more drinks on one occasion?",
+    "options": [
+      "Daily/almost daily",
+      "Weekly",
+      "Monthly",
+      "Less than monthly",
+      "Never"
+    ]
+  },
+
+  {
+    "sectionCode": "E",
+    "section": "Depression and Anxiety ",
+    "description": "Over the past 2 weeks, how often have you been bothered by the following problems?",
+    "question": "94. Feeling nervous, anxious, or on edge",
+    "options": [
+      "Not at all",
+      "Several days",
+      "More than half the days",
+      "Nearly every day"
+    ]
+  },
+  {
+    "sectionCode": "E",
+    "section": "Depression and Anxiety ",
+
+    "question": "95. Not being able to stop or control worrying",
+    "options": [
+      "Not at all",
+      "Several days",
+      "More than half the days",
+      "Nearly every day"
+    ]
+  },
+  {
+    "sectionCode": "E",
+    "section": "Depression and Anxiety ",
+
+    "question": "96. Feeling down, depressed, or hopeless",
+    "options": [
+      "Not at all",
+      "Several days",
+      "More than half the days",
+      "Nearly every day"
+    ]
+  },
+  {
+    "sectionCode": "E",
+    "section": "Depression and Anxiety ",
+
+    "question": "97. Little interest or pleasure in doing things",
+    "options": [
+      "Not at all",
+      "Several days",
+      "More than half the days",
+      "Nearly every day"
+    ]
+  },
+
+  {
+    "sectionCode": "E",
+    "section": "Mental Health Symptoms",
+    "question": "98. If yes, what diagnosis?",
+    "type": "text"
+  },
+  {
+    "sectionCode": "E",
+    "section": "Mental Health Symptoms",
+    "question": "99. Are you currently taking any medications for mental health?",
+    "options": ["Yes, regularly", "Yes, sometimes", "No", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "E",
+    "section": "Resilience and Coping",
+    "question": "100. When facing problems, what do you typically do? (Check all that apply)",
+    "options": [
+      "Talk to friends/family",
+      "Seek professional help (counselor/therapist)",
+      "Use substances (alcohol/drugs)",
+      "Isolate myself",
+      "Engage in hobbies/activities",
+      "Prayer/spiritual practices",
+      "Self-harm",
+      "Do nothing/ignore it",
+      "Other"
+    ],
+    "rules": "Select all that apply"
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "101. Have you ever accessed healthcare services (doctor, clinic, hospital)?",
+    "options": ["Yes", "No"],
+    "skipLogic": "If No, skip to Q103"
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "101a. When was your last healthcare visit?",
+    "options": [
+      "Within past month",
+      "1-6 months ago",
+      "6-12 months ago",
+      "More than 1 year ago"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "101b. Where do you usually go for healthcare?",
+    "options": [
+      "Government hospital/Primary Health Center",
+      "Private clinic/hospital",
+      "Sabrang or other LGBTQ-friendly clinic",
+      "NGO clinic",
+      "Traditional healer/vaid/hakim",
+      "Self-medication/pharmacy only",
+      "Other"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "101c. Have you disclosed your sexual orientation or gender identity to healthcare providers?",
+    "options": [
+      "Yes, always",
+      "Yes, sometimes",
+      "Rarely",
+      "Never",
+      "Not applicable"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "101d. Do you have health insurance or any health coverage?",
+    "options": [
+      "Yes, employer",
+      "Yes, government (Ayushman Bharat, etc.)",
+      "Yes, private",
+      "No"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Healthcare Access",
+    "question": "102. What are the main barriers to accessing healthcare? (Check all that apply)",
+    "options": [
+      "Cannot afford it",
+      "Fear of discrimination",
+      "Too far/no transportation",
+      "Don't know where to go",
+      "Long waiting times",
+      "Fear of family finding out",
+      "Previous bad experiences",
+      "No barriers"
+    ],
+    "rules": "Select all that apply"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "103. Have you ever been tested for HIV?",
+    "options": ["Yes", "No"],
+    "skipLogic": "If No, skip to Q105"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "103a. When was your most recent HIV test?",
+    "options": [
+      "Within past 3 months",
+      "3-6 months ago",
+      "6-12 months ago",
+      "More than 1 year ago"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "103b. What was the result of your most recent HIV test?",
+    "options": [
+      "Negative",
+      "Positive",
+      "Didn’t get results",
+      "Don't know",
+      "Prefer not to say"
+    ],
+    "skipLogic": "If Negative, go to Q105"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "103c. [If Positive] Are you currently on antiretroviral treatment (ART)?",
+    "options": [
+      "Yes, taking regularly",
+      "Yes, but missing doses often",
+      "No, not on treatment",
+      "Prefer not to say"
+    ],
+    "condition": "Show only if Q103b = Positive"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "104. In the past 12 months, have you been diagnosed with any sexually transmitted infections (STIs)?",
+    "options": ["Yes", "No", "Don't know", "Prefer not to say"]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "104a. [If Yes] Which STI(s)? (Check all that apply)",
+    "options": [
+      "Gonorrhea",
+      "Syphilis",
+      "Chlamydia",
+      "Herpes",
+      "HPV/Genital warts",
+      "Hepatitis B",
+      "Other",
+      "Don't know which one"
+    ],
+    "rules": "Select all that apply",
+    "condition": "Show only if Q104 = Yes"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV and STI Testing",
+    "question": "104b. Have you received treatment for the STI(s)?",
+    "options": [
+      "Yes, completed treatment",
+      "Yes, currently in treatment",
+      "No",
+      "Don't know"
+    ],
+    "condition": "Show only if Q104 = Yes"
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV Prevention (PrEP and PEP)",
+    "question": "105. Have you heard of PrEP (Pre-Exposure Prophylaxis - daily pills to prevent HIV)?",
+    "options": [
+      "Yes, I understand what it is",
+      "Yes, but don't know details",
+      "No, never heard of it"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV Prevention (PrEP and PEP)",
+    "question": "105a. Are you currently taking PrEP?",
+    "options": [
+      "Yes, regularly",
+      "Yes, but miss doses often",
+      "No, but interested",
+      "No, not interested",
+      "Not eligible"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV Prevention (PrEP and PEP)",
+    "question": "105b. Have you heard of PEP (Post-Exposure Prophylaxis - emergency pills after HIV exposure)?",
+    "options": [
+      "Yes, I understand what it is",
+      "Yes, but don't know details",
+      "No, never heard of it"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV Prevention (PrEP and PEP)",
+    "question": "105c. Have you ever used PEP after a potential HIV exposure?",
+    "options": [
+      "Yes",
+      "No, but needed it",
+      "No, never needed it",
+      "Don't know what PEP is"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "HIV Prevention (PrEP and PEP)",
+    "question": "105d. Have you received the HPV vaccine (prevents some cancers and genital warts)?",
+    "options": [
+      "Yes, completed series",
+      "Yes, partially",
+      "No, but interested",
+      "No, not interested",
+      "Don't know"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Gender-Affirming Care",
+    "question": "106. Are you currently using hormones for gender affirmation?",
+    "options": [
+      "Yes, prescribed by doctor",
+      "Yes, self-administering",
+      "No, but want to",
+      "No, not interested",
+      "Not applicable"
+    ],
+    "skipLogic": "If 'Not applicable' or 'No, not interested', skip to Section G"
+  },
+  {
+    "sectionCode": "F",
+    "section": "Gender-Affirming Care",
+    "question": "106a. [If Yes] Where do you obtain hormones?",
+    "options": [
+      "Healthcare provider/doctor",
+      "Pharmacy without prescription",
+      "Friends/community members",
+      "Online",
+      "Other"
+    ],
+    "rules": "Select all that apply",
+    "condition": "Show only if Q106 = 'Yes, prescribed by doctor' OR 'Yes, self-administering'"
+  },
+  {
+    "sectionCode": "F",
+    "section": "Gender-Affirming Care",
+    "question": "106b. Have you undergone any gender-affirming surgeries?",
+    "options": [
+      "Yes",
+      "No, but planning to",
+      "No, not interested",
+      "No, cannot afford",
+      "Not applicable"
+    ]
+  },
+  {
+    "sectionCode": "F",
+    "section": "Gender-Affirming Care",
+    "question": "106c. Do you receive regular medical monitoring while using hormones?",
+    "options": ["Yes, regularly", "Sometimes", "No", "Not applicable"]
+  },
+  {
+    "sectionCode": "G",
+    "section": "Family Relationships",
+    "question": "107. Does your family know about your sexual orientation or gender identity?",
+    "options": [
+      "Yes, everyone knows",
+      "Yes, some family members know",
+      "No, none know",
+      "Prefer not to say"
+    ],
+    "skipLogic": "If 'No, none know', skip to Q108 (Social Support Networks)"
+  },
+  {
+    "sectionCode": "G",
+    "section": "Family Relationships",
+    "question": "107a. [If Yes] How did they react when they found out?",
+    "options": [
+      "Very accepting",
+      "Somewhat accepting",
+      "Neutral/indifferent",
+      "Somewhat rejecting",
+      "Very rejecting"
+    ],
+    "condition": "Show only if Q107 = Yes"
+  },
+  {
+    "sectionCode": "G",
+    "section": "Family Relationships",
+    "question": "107b. If you are married to an opposite-sex spouse, does your spouse know about your sexual orientation?",
+    "options": ["Yes", "No", "Not applicable (not married to opposite sex)"]
+  },
+  {
+    "sectionCode": "G",
+    "section": "Social Support Networks",
+    "question": "108. How many close friends do you have that you can confide in?",
+    "options": ["None", "1-2", "3-5", "6-10", "More than 10"],
+    "skipLogic": "If 'None', skip Q109"
+  },
+  {
+    "sectionCode": "G",
+    "section": "Social Support Networks",
+    "question": "109. How many of your close friends are LGBTQ+?",
+    "options": ["None", "A few", "About half", "Most", "All"],
+    "condition": "Show only if Q108 != None"
+  },
+  {
+    "sectionCode": "G",
+    "section": "Social Support Networks",
+    "question": "110. Are you part of a hijra gharana or community?",
+    "options": ["Yes", "No", "Not applicable (not hijra)"]
+  },
+  {
+    "sectionCode": "G",
+    "section": "Social Support Networks",
+    "question": "110a. [If Yes] How would you describe your relationship with your hijra community?",
+    "options": [
+      "Very supportive",
+      "Somewhat supportive",
+      "Neutral",
+      "Somewhat exploitative",
+      "Very exploitative"
+    ],
+    "condition": "Show only if Q110 = Yes"
+  },
+  {
+    "sectionCode": "G",
+    "section": "Opinion Leaders and Media Influence",
+    "question": "111. Where do you get most of your information about LGBTQ+ issues? (Check top 2)",
+    "options": [
+      "Social media",
+      "LGBTQ+ organizations",
+      "Friends/community",
+      "News media",
+      "Healthcare providers",
+      "Online forums/websites",
+      "Support groups",
+      "Other"
+    ],
+    "rules": "Select top 2"
+  },
+  {
+    "sectionCode": "H",
+    "section": "Awareness of Legal Rights",
+    "question": "112. Are you aware that Section 377 (law criminalizing homosexuality) was struck down by the Supreme Court in 2018?",
+    "options": ["Yes", "No", "Not sure"]
+  },
+  {
+    "sectionCode": "H",
+    "section": "Awareness of Legal Rights",
+    "question": "113. Are you aware of the Transgender Persons (Protection of Rights) Act, 2019?",
+    "options": [
+      "Yes, and I know what rights it provides",
+      "Yes, but don't know details",
+      "No, never heard of it"
+    ]
+  },
   {
     "sectionCode": "I",
     "section": "Awareness of Services",
@@ -970,7 +1516,16 @@
     "sectionCode": "I",
     "section": "Awareness of Services",
     "question": "114a. [If Yes] Which services are you aware of? (Check all that apply)",
-    "options": ["LGBTQ+ community centers", "Crisis helplines", "Legal aid services", "Mental health counseling", "HIV/STI testing services", "Support groups", "Safe houses/shelter", "Other"],
+    "options": [
+      "LGBTQ+ community centers",
+      "Crisis helplines",
+      "Legal aid services",
+      "Mental health counseling",
+      "HIV/STI testing services",
+      "Support groups",
+      "Safe houses/shelter",
+      "Other"
+    ],
     "rules": "Select all that apply",
     "condition": "Show only if Q114 = Yes"
   },
@@ -985,77 +1540,832 @@
     "sectionCode": "I",
     "section": "Awareness of Services",
     "question": "115a. [If Yes] How helpful were these services?",
-    "options": ["Very helpful", "Somewhat helpful", "Not very helpful", "Not helpful at all"],
+    "options": [
+      "Very helpful",
+      "Somewhat helpful",
+      "Not very helpful",
+      "Not helpful at all"
+    ],
     "condition": "Show only if Q115 = Yes"
   },
+  
   {
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "122. Would you be interested in receiving training or capacity building support?",
-  "options": ["Yes, very interested", "Yes, somewhat interested", "Maybe/Not sure", "No, not interested", "Prefer not to say"],
-  "skipLogic": "If 'No, not interested', skip to Closing Questions"
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "123. What type of training or capacity building would be most helpful to you? (Select up to 5)",
-  "options": ["Job skills training (computers, tailoring, beauty/salon, etc.)", "Small business/entrepreneurship training", "Financial literacy (banking, savings, investment)", "Resume writing and job interview skills", "Sexual health and HIV/STI prevention education", "Mental health awareness and coping skills", "Substance use harm reduction", "Nutrition and healthy living", "Legal rights awareness (Section 377, Transgender Act, etc.)", "How to file police complaints and access justice", "Property rights and inheritance", "Identity documentation (Aadhaar, voter ID, gender marker change)", "Peer education and counseling skills", "Community organizing and advocacy", "Public speaking and presentation skills", "How to run support groups", "Communication skills (English, Hindi, regional languages)", "Digital literacy (smartphone, computer, internet)", "Confidence building and self-esteem", "Conflict resolution and negotiation", "Understanding and managing hormone therapy (for transgender persons)", "Voice and communication training (for transgender persons)", "Family counseling and communication", "How to come out safely", "Personal safety and self-defense", "How to respond to discrimination and violence", "Emergency planning and crisis response", "Safe sex negotiation skills", "None of the above", "Other", "Prefer not to say"],
-  "rules": "Select up to 5"
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "124. What format of training would work best for you? (Select all that apply)",
-  "options": ["In-person workshops at Sabrang clinic", "In-person workshops in community spaces", "Online training (Zoom/video)", "Training videos I can watch anytime", "WhatsApp-based training groups", "One-on-one mentoring/coaching", "Weekend workshops", "Evening classes after work", "Short daily sessions", "Intensive multi-day training", "Training in Hindi", "Training in English", "Training in regional language", "Prefer not to say"],
-  "rules": "Select all that apply"
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "125. What is the biggest barrier to your participating in training programs? (Select top 2)",
-  "options": ["Cost/cannot afford fees", "Transportation to training location", "Work schedule conflicts", "Family responsibilities", "Fear of discrimination at training venues", "Fear of being outed if seen at LGBTQ+ programs", "No training programs available in my area", "Don't know where to find training opportunities", "Language barrier", "Lack of confidence to participate", "Health issues", "No barriers", "Other", "Prefer not to say"],
-  "rules": "Select up to 2"
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "126. Would you be willing to train others in the community if you received training yourself?",
-  "options": ["Yes, definitely", "Yes, maybe", "Not sure", "No", "Prefer not to say"]
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "127. Have you ever received any training or capacity building from YRGCARE or other organizations?",
-  "options": ["Yes, from YRGCARE", "Yes, from other organization(s)", "Yes, from both YRGCARE and others", "No, never received training", "Don't remember", "Prefer not to say"]
-},
-{
-  "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
-  "question": "128. [If Yes] How helpful was the training you received?",
-  "options": ["Very helpful - I use what I learned regularly", "Somewhat helpful - I've used some of it", "Not very helpful", "Not helpful at all", "Not applicable"],
-  "condition": "Show only if Q127 = Yes (any option except 'No, never received training')"
-},
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "116. After experiencing violence, have you sought help from anyone?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "116a. [If yes] From whom did you seek help? (Check all that apply)",
+    "options": [
+      "Friends",
+      "Family",
+      "LGBTQ+ organization/NGO",
+      "Police",
+      "Healthcare provider",
+      "Lawyer",
+      "Religious leader",
+      "Crisis helpline",
+      "Online support groups",
+      "Other"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "116b. Did you receive the help you needed?",
+    "options": [
+      "Yes, completely",
+      "Yes, partially",
+      "No, not at all"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "116c. Have you ever reported violence to the police?",
+    "options": [
+      "Yes, they took action",
+      "Yes, but they didn't help",
+      "Yes, but they made it worse",
+      "No, never reported"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "116d. What are the main reasons you did not seek help after violence? (Check all that apply)",
+    "options": [
+      "Ashamed/embarrassed",
+      "Didn't think it was serious enough",
+      "Didn't know where to go",
+      "Feared more discrimination",
+      "Feared retaliation from perpetrator",
+      "Didn't think anyone would help",
+      "Couldn't afford services",
+      "Feared family would find out",
+      "Previous bad experience seeking help",
+      "I did seek help",
+      "Other"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "117. When you face problems or violence, where do you seek support? (Rank your top 3 sources)",
+    "options": [
+      "Friends (LGBTQ+ or general friends)",
+      "Family members",
+      "Hijra guru",
+      "Hijra gharana/community",
+      "LGBTQ+ organizations/NGOs",
+      "Police",
+      "Healthcare providers",
+      "Sabrang or other LGBTQ-friendly clinics",
+      "Lawyer/legal aid services",
+      "Religious/spiritual leaders",
+      "Crisis helpline (phone)",
+      "Online support groups/social media",
+      "Garima Grih (shelter/safe house)",
+      "Support groups (in-person meetings)",
+      "Counselor/therapist",
+      "Social worker",
+      "Government welfare office",
+      "I handle problems alone/don't seek help",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "118. Have you ever contacted a helpline (phone/WhatsApp) when facing problems?",
+    "options": [
+      "Yes, and it was helpful",
+      "Yes, but it wasn't helpful",
+      "No, but I know helpline numbers",
+      "No, I don't know any helpline numbers",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "119. Have you ever stayed at Garima Grih or any shelter/safe house?",
+    "options": [
+      "Yes, currently staying",
+      "Yes, stayed in the past",
+      "No, but I know about it",
+      "No, never heard of it",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "120. Have you ever received support from a Community-Based Organization (CBO)?",
+    "options": [
+      "Yes, regularly",
+      "Yes, occasionally",
+      "Yes, once or twice",
+      "No, but I know about CBOs",
+      "No, I don't know what CBOs are",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "I",
+    "section": "Help-Seeking After Violence",
+    "question": "121. In your hijra community, how often do you seek guidance from your guru for personal problems?",
+    "options": [
+      "Always - my guru is my first support",
+      "Often - for important decisions",
+      "Sometimes - depends on the problem",
+      "Rarely - I prefer other support",
+      "Never - I don't seek guru's guidance",
+      "Not applicable - not part of hijra community",
+      "Prefer not to say"
+    ]
+  },
+
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "122. Would you be interested in receiving training or capacity building support?",
+    "options": [
+      "Yes, very interested",
+      "Yes, somewhat interested",
+      "Maybe/Not sure",
+      "No, not interested",
+      "Prefer not to say"
+    ],
+    "skipLogic": "If 'No, not interested', skip to Closing Questions"
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "123. What type of training or capacity building would be most helpful to you? (Select up to 5)",
+    "options": [
+      "Job skills training (computers, tailoring, beauty/salon, etc.)",
+      "Small business/entrepreneurship training",
+      "Financial literacy (banking, savings, investment)",
+      "Resume writing and job interview skills",
+      "Sexual health and HIV/STI prevention education",
+      "Mental health awareness and coping skills",
+      "Substance use harm reduction",
+      "Nutrition and healthy living",
+      "Legal rights awareness (Section 377, Transgender Act, etc.)",
+      "How to file police complaints and access justice",
+      "Property rights and inheritance",
+      "Identity documentation (Aadhaar, voter ID, gender marker change)",
+      "Peer education and counseling skills",
+      "Community organizing and advocacy",
+      "Public speaking and presentation skills",
+      "How to run support groups",
+      "Communication skills (English, Hindi, regional languages)",
+      "Digital literacy (smartphone, computer, internet)",
+      "Confidence building and self-esteem",
+      "Conflict resolution and negotiation",
+      "Understanding and managing hormone therapy (for transgender persons)",
+      "Voice and communication training (for transgender persons)",
+      "Family counseling and communication",
+      "How to come out safely",
+      "Personal safety and self-defense",
+      "How to respond to discrimination and violence",
+      "Emergency planning and crisis response",
+      "Safe sex negotiation skills",
+      "None of the above",
+      "Other",
+      "Prefer not to say"
+    ],
+    "rules": "Select up to 5"
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "124. What format of training would work best for you? (Select all that apply)",
+    "options": [
+      "In-person workshops at Sabrang clinic",
+      "In-person workshops in community spaces",
+      "Online training (Zoom/video)",
+      "Training videos I can watch anytime",
+      "WhatsApp-based training groups",
+      "One-on-one mentoring/coaching",
+      "Weekend workshops",
+      "Evening classes after work",
+      "Short daily sessions",
+      "Intensive multi-day training",
+      "Training in Hindi",
+      "Training in English",
+      "Training in regional language",
+      "Prefer not to say"
+    ],
+    "rules": "Select all that apply"
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "125. What is the biggest barrier to your participating in training programs? (Select top 2)",
+    "options": [
+      "Cost/cannot afford fees",
+      "Transportation to training location",
+      "Work schedule conflicts",
+      "Family responsibilities",
+      "Fear of discrimination at training venues",
+      "Fear of being outed if seen at LGBTQ+ programs",
+      "No training programs available in my area",
+      "Don't know where to find training opportunities",
+      "Language barrier",
+      "Lack of confidence to participate",
+      "Health issues",
+      "No barriers",
+      "Other",
+      "Prefer not to say"
+    ],
+    "rules": "Select up to 2"
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "126. Would you be willing to train others in the community if you received training yourself?",
+    "options": [
+      "Yes, definitely",
+      "Yes, maybe",
+      "Not sure",
+      "No",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "127. Have you ever received any training or capacity building from YRGCARE or other organizations?",
+    "options": [
+      "Yes, from YRGCARE",
+      "Yes, from other organization(s)",
+      "Yes, from both YRGCARE and others",
+      "No, never received training",
+      "Don't remember",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "J",
+    "section": "Capacity Building and Training Needs",
+    "question": "128. [If Yes] How helpful was the training you received?",
+    "options": [
+      "Very helpful - I use what I learned regularly",
+      "Somewhat helpful - I've used some of it",
+      "Not very helpful",
+      "Not helpful at all",
+      "Not applicable"
+    ],
+    "condition": "Show only if Q127 = Yes (any option except 'No, never received training')"
+  },
   {
     "sectionCode": "J",
     "section": "Information Needs and Future Support",
     "question": "129. What information or services would be most helpful to you? (Check top 3)",
-    "options": ["Information about legal rights", "Mental health counseling", "HIV/STI prevention and treatment", "Job training/employment assistance", "Safe housing options", "Support groups", "Gender-affirming healthcare", "Family counseling", "Substance use treatment", "Financial assistance", "Violence prevention programs", "Education/literacy programs", "Other"],
+    "options": [
+      "Information about legal rights",
+      "Mental health counseling",
+      "HIV/STI prevention and treatment",
+      "Job training/employment assistance",
+      "Safe housing options",
+      "Support groups",
+      "Gender-affirming healthcare",
+      "Family counseling",
+      "Substance use treatment",
+      "Financial assistance",
+      "Violence prevention programs",
+      "Education/literacy programs",
+      "Other"
+    ],
     "rules": "Select up to 3"
   },
   {
     "sectionCode": "J",
     "section": "Information Needs and Future Support",
     "question": "130. How would you prefer to receive support services? (Check all that apply)",
-    "options": ["In-person at clinic", "Phone helpline", "Online/video counseling", "Mobile app", "Home visits", "Community meetings", "Peer support groups", "WhatsApp groups"],
+    "options": [
+      "In-person at clinic",
+      "Phone helpline",
+      "Online/video counseling",
+      "Mobile app",
+      "Home visits",
+      "Community meetings",
+      "Peer support groups",
+      "WhatsApp groups"
+    ],
     "rules": "Select all that apply"
   },
   {
     "sectionCode": "J",
     "section": "Information Needs and Future Support",
     "question": "131. Would you be interested in helping other LGBTQ+ people through peer education, support groups, or advocacy?",
-    "options": ["Yes, very interested", "Yes, somewhat interested", "Maybe", "Not interested"]
-  }
+    "options": [
+      "Yes, very interested",
+      "Yes, somewhat interested",
+      "Maybe",
+      "Not interested"
+    ]
+  },
+  {
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "132. When you decided to pursue gender-affirming services (hormones, surgery, etc.), what did you hope to become or achieve?",
+  "options": [
+    "To feel comfortable and authentic in my body",
+    "To be recognized and accepted in my true gender",
+    "To improve my mental health and wellbeing",
+    "To have better employment opportunities",
+    "To be able to have romantic relationships",
+    "To be accepted by my family",
+    "To live without fear of violence or discrimination",
+    "To match my appearance with how I feel inside",
+    "To access better healthcare",
+    "To participate fully in society",
+    "To be a role model for other transgender people",
+    "To have legal recognition of my gender",
+    "To simply be myself without hiding",
+    "Other",
+    "Not applicable (not transgender or not pursuing gender-affirming services)",
+    "Prefer not to say"
+  ]
+},
 
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "133. How do you see yourself five years from now? What do you hope to achieve?",
+  "options": [
+    "Having a stable, well-paying job",
+    "Running my own successful business",
+    "Being financially independent",
+    "Owning my own home/property",
+    "Having savings and financial security",
+    "Being in a loving, committed relationship",
+    "Having children or raising a family",
+    "Being reconciled with my family",
+    "Living independently",
+    "Being completely out and open about who I am",
+    "Being physically healthy",
+    "Being mentally healthy and happy",
+    "Having completed my gender transition (if applicable)",
+    "Living free from substance use issues",
+    "Being accepted in my community",
+    "Having a strong network of friends",
+    "Being a leader in the LGBTQ+ community",
+    "Helping other LGBTQ+ people",
+    "Being politically or socially active",
+    "Having completed my education/degree",
+    "Having learned new skills or trades",
+    "Speaking English fluently",
+    "Having all my legal documents updated",
+    "Having legal protection from discrimination",
+    "Being more confident and self-assured",
+    "Having achieved my spiritual goals",
+    "Being at peace with myself",
+    "I don't think about the future",
+    "I'm not sure/don't know",
+    "Other",
+    "Prefer not to say"
+  ]
+},
 
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "134. Who do you trust most to support you in achieving your life goals over the next five years?",
+  "options": [
+    "My family members",
+    "My life partner/spouse",
+    "My close friends",
+    "My hijra guru (if applicable)",
+    "My hijra gharana/community",
+    "LGBTQ+ friends/community",
+    "Religious/spiritual leaders or community",
+    "Healthcare providers at LGBTQ-friendly clinics (like Sabrang)",
+    "Counselors or therapists",
+    "Community-based organizations (CBOs)",
+    "NGO workers or social workers",
+    "Support groups",
+    "Online LGBTQ+ community",
+    "Government welfare officers",
+    "Legal aid organizations",
+    "Myself - I rely on myself",
+    "No one - I don't have support",
+    "God/Higher power",
+    "Other",
+    "Prefer not to say"
+  ]
+},
 
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "135. What kind of support is most important for you to achieve your goals?",
+  "options": [
+    "Financial support/money",
+    "Emotional support and encouragement",
+    "Practical advice and guidance",
+    "Help with job hunting or business",
+    "Help with education or training",
+    "Help navigating legal systems",
+    "Help with housing",
+    "Healthcare and medical support",
+    "Connections to helpful people/networks",
+    "Protection from discrimination or violence",
+    "Help with family reconciliation",
+    "Spiritual/religious guidance",
+    "Just having someone who believes in me",
+    "Other",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "136. What should a much younger LGBTQ+ community member (18-25 years old) consider and plan for in their life?",
+  "options": [
+    "Complete your education - it opens many doors",
+    "Learn English and computer skills",
+    "Get vocational training in a skill",
+    "Save money whenever you can",
+    "Come out only when it's safe to do so",
+    "Don't rush gender transition - think carefully",
+    "Find and connect with LGBTQ+ community early",
+    "Be proud of who you are",
+    "Try to maintain family relationships if possible",
+    "Choose your friends and partners carefully",
+    "Don't depend completely on any one person",
+    "Learn to be independent",
+    "Take care of your mental health",
+    "Avoid alcohol and drugs",
+    "Practice safe sex always",
+    "Get regular HIV/STI testing",
+    "If taking hormones, do it under medical supervision",
+    "Focus on building a career early",
+    "Don't rely on sex work as only option",
+    "Start saving money from young age",
+    "Get your legal documents in order",
+    "Know your legal rights",
+    "Learn how to stay safe",
+    "Document any violence or discrimination",
+    "Don't be afraid to ask for help",
+    "Build your confidence and self-worth",
+    "Don't let discrimination define you",
+    "Have dreams and work toward them",
+    "Help other LGBTQ+ people when you can",
+    "Life will have challenges - be prepared",
+    "Society is changing but slowly",
+    "Choose your battles wisely",
+    "I don't have advice for younger people",
+    "Other advice",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "137. Do you consider aging transgender individuals (60+ years) to be vulnerable or at higher risk?",
+  "options": [
+    "Yes, definitely - they face many unique challenges",
+    "Yes, somewhat - they face some additional challenges",
+    "No more than anyone else aging",
+    "No, they are not particularly vulnerable",
+    "Not sure/Don't know",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "138. What specific challenges do you think aging transgender and LGBTQ+ individuals face?",
+  "options": [
+    "Lack of family support in old age",
+    "Poverty and financial insecurity",
+    "Lack of housing or being thrown out",
+    "Health problems and no access to care",
+    "Difficulty continuing hormone therapy",
+    "Loneliness and social isolation",
+    "Being unable to work or earn",
+    "Discrimination in healthcare for elderly",
+    "No legal protection or pension",
+    "Physical weakness making them targets for violence",
+    "Mental health issues and depression",
+    "No one to care for them when sick",
+    "Being abandoned by gharana/community",
+    "Loss of dignity in old age",
+    "Difficulty accessing government welfare schemes",
+    "I don't think they face special challenges",
+    "Other",
+    "Not sure/Don't know",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Future Vision and Community Support",
+  "question": "139. What should we do to support aging transgender and LGBTQ+ individuals?",
+  "options": [
+    "Create old age homes specifically for LGBTQ+ elders",
+    "Provide regular pension or financial support",
+    "Ensure access to affordable healthcare",
+    "Provide free/subsidized hormone therapy",
+    "Create day care centers where elders can socialize",
+    "Home-based care services",
+    "Legal aid for property and pension rights",
+    "Mental health and counseling services",
+    "Regular health checkups",
+    "Food security programs",
+    "Transportation assistance",
+    "Helpline specifically for elderly LGBTQ+ people",
+    "Intergenerational programs connecting youth and elders",
+    "Respect and dignity programs in healthcare",
+    "Training for healthcare workers on elderly LGBTQ+ care",
+    "Government recognition of LGBTQ+ elders as vulnerable group",
+    "Housing assistance programs",
+    "Employment opportunities suitable for older adults",
+    "Other",
+    "Prefer not to say"
+  ]
+},
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "140. Because of extreme weather, environmental problems, or climate-related difficulties, I have had trouble accessing condoms, sexual health services, HIV/STI testing, or staying safe during sex.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "141. In the past 12 months, extreme heat has affected my daily life, work, or health.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "142. In the past 12 months, flooding, heavy rains, or water-related disasters have affected me or my community.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "143. Climate change or environmental problems have made it harder for me to access healthcare, medications, or health services.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "144. Environmental or climate problems have increased stress, anxiety, or other mental health challenges for me.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "145. I have had to move or migrate because of environmental problems, droughts, floods, or climate-related reasons.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "146. During extreme weather or disasters, I faced discrimination or was denied help because of my gender identity or sexual orientation.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "L",
+  "section": "Climate Change & Sexual Health",
+  "question": "147. I worry about how climate change or environmental problems will affect my life and safety in the future.",
+  "options": [
+    "True",
+    "False",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "148. Would you be interested in receiving any health services — such as testing guidance, linkage to care, or counselling — through a virtual platform, rather than visiting a facility in person?",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "149. Do you feel comfortable reaching out to a health professional or service provider for support or information using online tools or your phone?",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "150. If you were to use a virtual service for your health needs, which of the following ways would you prefer to connect with a health worker or service?",
+  "options": [
+    "A phone call (voice only)",
+    "A WhatsApp voice call",
+    "A video call using an app such as Zoom or Google Meet",
+    "A text or chat-based platform (e.g., WhatsApp text, SMS, or online chat)",
+    "A dedicated health app on my phone",
+    "Don't know",
+    "Refuse to answer"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151a. It would feel more private or confidential",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151b. It would be easier to access from where I live",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151c. It would feel less stigmatising or judgement-free",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151d. It would save me time or money on travel",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151e. I would feel safer being open about my identity or health status",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151f. I would be able to get results or information faster",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "151g. It would make it easier to follow up on my care or treatment",
+  "options": [
+    "Yes",
+    "No",
+    "Don't Know",
+    "Prefer Not to Say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "152. Is there any other important topic we didn't ask about?",
+  "options": [
+    "Experiences with dating and relationships",
+    "Issues related to aging as LGBTQ+ person",
+    "Experiences with police or legal system",
+    "Access to government schemes/welfare",
+    "Issues specific to rural areas",
+    "Experiences with religious institutions",
+    "Workplace discrimination details",
+    "Healthcare access barriers",
+    "Housing discrimination",
+    "Education discrimination",
+    "No, you covered everything",
+    "Yes, other topic",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "153. How did you feel about this interview?",
+  "options": [
+    "Very comfortable",
+    "Comfortable",
+    "Somewhat uncomfortable",
+    "Very uncomfortable",
+    "Prefer not to say"
+  ]
+},
+
+{
+  "sectionCode": "M",
+  "section": "Virtual Health Services and Support",
+  "question": "154. Would you like a referral to any services?",
+  "options": [
+    "Yes, mental health services",
+    "Yes, legal aid",
+    "Yes, medical services",
+    "Yes, support groups",
+    "Yes, employment services",
+    "Yes, housing support",
+    "Yes, substance use treatment",
+    "No, thank you",
+    "Prefer not to say"
+  ]
+}
 ]
