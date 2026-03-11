@@ -1,88 +1,158 @@
-import React, { useState } from "react";
-import { IoArrowForward } from "react-icons/io5";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-export default function Dashboard() {
-  const [hover, setHover] = useState(false);
-const navigate = useNavigate();
-  return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h1 style={styles.title}>Welcome 👋</h1>
-        <p style={styles.subtitle}>
-          Ready to begin your survey experience?
-        </p>
+import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 
-        <button
-          style={{
-            ...styles.button,
-            backgroundColor: hover ? "#e0a800" : "#FFC107",
-            boxShadow: hover
-              ? "0 8px 20px rgba(255, 193, 7, 0.4)"
-              : "0 4px 12px rgba(255, 193, 7, 0.2)",
-          }}
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          onClick={() => navigate("/survey")}
-        >
-          <span style={styles.buttonContent}>
-            Start Survey
-            <IoArrowForward style={styles.icon} />
-          </span>
-        </button>
+export default function Dashboard() {
+  const navigate = useNavigate();
+
+  return (
+    <div style={styles.page}>
+      <Navbar />
+
+      <div style={styles.container}>
+        {/* Welcome Section */}
+
+        <div style={styles.welcome}>
+          <h2>Welcome Back 👋</h2>
+          <p>Explore surveys and track your participation.</p>
+        </div>
+
+        {/* Stats Section */}
+
+        <div style={styles.stats}>
+          <div style={styles.statCard}>
+            <h3>12</h3>
+            <p>Available Surveys</p>
+          </div>
+
+          <div style={styles.statCard}>
+            <h3>5</h3>
+            <p>Completed</p>
+          </div>
+
+          <div style={styles.statCard}>
+            <h3>7</h3>
+            <p>Pending</p>
+          </div>
+        </div>
+
+        {/* Main Actions */}
+
+        <h2 style={{ marginTop: "40px" }}>Quick Actions</h2>
+
+        <div style={styles.cards}>
+          {/* Survey Card */}
+
+          <div style={styles.card} onClick={() => navigate("/surveyintro")}>
+            <h3>📋 Surveys</h3>
+
+            <p>Participate in surveys and share your valuable feedback.</p>
+
+            <button style={styles.button}>Start Survey</button>
+          </div>
+
+          {/* Future Card */}
+
+          <div style={styles.card}>
+            <h3>📊 Reports</h3>
+
+            <p>View analytics and survey participation reports.</p>
+
+            <button style={styles.disabledBtn}>Coming Soon</button>
+          </div>
+        </div>
+
+        {/* Activity */}
+
+        <div style={styles.activity}>
+          <h3>Recent Activity</h3>
+
+          <ul>
+            <li>Completed Customer Satisfaction Survey</li>
+            <li>Joined Product Feedback Survey</li>
+            <li>Logged in successfully</li>
+          </ul>
+        </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
 
 const styles = {
+  page: {
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    background: "linear-gradient(135deg,#ffffff,#FFF8E1)",
+    fontFamily: "Poppins",
+  },
+
   container: {
-    height: "100vh",
-    backgroundColor: "#ffffff",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontFamily: "Arial, sans-serif",
+    padding: "40px",
+    flex: 1,
   },
-  card: {
-    backgroundColor: "#ffffff",
-    padding: "60px 50px",
-    borderRadius: "24px",
-    width: "400px",
+
+  welcome: {
+    marginBottom: "30px",
+  },
+
+  stats: {
+    display: "flex",
+    gap: "20px",
+    marginBottom: "30px",
+  },
+
+  statCard: {
+    flex: "1",
+    background: "#fff",
+    padding: "25px",
+    borderRadius: "14px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
     textAlign: "center",
-    boxShadow:
-      "0 20px 50px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(255, 193, 7, 0.1)",
-    border: "1px solid #FFF8E1",
-    transition: "0.3s ease",
   },
-  title: {
-    marginBottom: "15px",
-    color: "#222",
-    fontSize: "30px",
-    fontWeight: "700",
-  },
-  subtitle: {
-    marginBottom: "35px",
-    color: "#666",
-    fontSize: "16px",
-  },
-  button: {
-    color: "#ffffff",
-    padding: "14px 20px",
-    borderRadius: "12px",
-    border: "none",
-    fontSize: "17px",
-    fontWeight: "600",
-    cursor: "pointer",
-    width: "100%",
-    transition: "all 0.3s ease",
-  },
-  buttonContent: {
+
+  cards: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "8px",
+    gap: "30px",
+    marginTop: "20px",
   },
-  icon: {
-    fontSize: "20px",
+
+  card: {
+    width: "300px",
+    padding: "30px",
+    borderRadius: "18px",
+    background: "#fff",
+    boxShadow: "0 15px 40px rgba(0,0,0,0.08)",
+    cursor: "pointer",
+    transition: "0.3s",
+  },
+
+  button: {
+    marginTop: "15px",
+    padding: "10px 18px",
+    border: "none",
+    background: "#FFC107",
+    color: "#fff",
+    borderRadius: "8px",
+    cursor: "pointer",
+  },
+
+  disabledBtn: {
+    marginTop: "15px",
+    padding: "10px 18px",
+    border: "none",
+    background: "#ddd",
+    borderRadius: "8px",
+  },
+
+  activity: {
+    marginTop: "40px",
+    background: "#fff",
+    padding: "25px",
+    borderRadius: "14px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
   },
 };

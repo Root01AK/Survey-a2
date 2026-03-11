@@ -7,7 +7,6 @@ export default function SurveyIntro() {
 
   return (
     <div style={styles.container}>
-      
       {/* Content Area */}
       <div style={styles.cardWrapper}>
         <div style={styles.card}>
@@ -23,11 +22,18 @@ export default function SurveyIntro() {
 
           <div style={styles.content}>
             <p>
-             Thank you for taking the time to participate in this important study. We know that sharing personal experiences can be difficult, and we truly appreciate your willingness to help us understand the challenges faced by LGBTQIA+ communities in India.
+              Thank you for taking the time to participate in this important
+              study. We know that sharing personal experiences can be difficult,
+              and we truly appreciate your willingness to help us understand the
+              challenges faced by LGBTQIA+ communities in India.
             </p>
 
             <p>
-             This survey asks about your life experiences, including some sensitive topics like discrimination, violence, health, and substance use. The information you share will help us design better support services and advocate for policies that protect and empower our community.
+              This survey asks about your life experiences, including some
+              sensitive topics like discrimination, violence, health, and
+              substance use. The information you share will help us design
+              better support services and advocate for policies that protect and
+              empower our community.
             </p>
 
             <h4 style={styles.rememberTitle}>Please remember:</h4>
@@ -35,13 +41,20 @@ export default function SurveyIntro() {
             <ul style={styles.list}>
               <li>Your participation is completely voluntary.</li>
               <li>All your responses will remain strictly confidential.</li>
-              <li>You may skip any question you are not comfortable answering.</li>
+              <li>
+                You may skip any question you are not comfortable answering.
+              </li>
               <li>You may stop the survey at any time.</li>
             </ul>
-            <p>The interview typically takes 45-60 minutes. If at any point you feel distressed, please let the interviewer know. We have counseling support available if you need it.</p>
+            <p>
+              The interview typically takes 45-60 minutes. If at any point you
+              feel distressed, please let the interviewer know. We have
+              counseling support available if you need it.
+            </p>
 
             <p style={styles.highlight}>
-             Your voice matters, and your story can make a real difference in improving the lives of many others in our community.
+              Your voice matters, and your story can make a real difference in
+              improving the lives of many others in our community.
             </p>
           </div>
         </div>
@@ -49,10 +62,7 @@ export default function SurveyIntro() {
 
       {/* Bottom Button */}
       <div style={styles.buttonContainer}>
-        <button
-          style={styles.button}
-          onClick={() => navigate("/consent")}
-        >
+        <button style={styles.button} onClick={() => navigate("/survey")}>
           Start Survey
           <IoArrowForward />
         </button>
@@ -75,6 +85,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     padding: "50px 20px",
+    paddingBottom: "20px",
   },
 
   card: {
@@ -138,7 +149,7 @@ const styles = {
   },
 
   button: {
-    width: "100%",
+    width: "20%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -151,5 +162,6 @@ const styles = {
     fontWeight: "600",
     cursor: "pointer",
     fontSize: "16px",
+    margin: "0 auto",
   },
 };

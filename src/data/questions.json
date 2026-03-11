@@ -3,8 +3,8 @@
     "sectionCode": "A",
     "section": "About You",
     "question": "1. What is your age? ",
-    "info": "[If <18, end survey. If Prefer not to say, show info popup]",
     "options": [
+      "Less than 18",
       "18-25 years",
       "26-30 years",
       "31-35 years",
@@ -170,8 +170,7 @@
       "No, I migrated/moved to a different place (Continue to question 7)",
       "Prefer not to say (Skip to question 8)"
     ],
-    "description": "These questions help us understand migration patterns within our community.",
-    "strictrules": "Programmer Note: Auto fill Q6=Yes, if Q4=Q5 & Skip to Q8➤ If you live where you were born, skip to question 8[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
+    "description": "These questions help us understand migration patterns within our community."
   },
 
   {
@@ -185,10 +184,7 @@
       "Over 15 years ago",
       "Don't remember",
       "Prefer not to say"
-    ],
-      "note": "If you live where you were born, skip to question 8",
-      "rules":"[Q7 – Q7b Mandatory if Q6=No or Q6=Prefer not to say]"
-
+    ]
   },
 
   {
@@ -329,16 +325,15 @@
     "question": "14. Have you ever had sex with someone?",
     "options": ["Yes", "No"],
     "description": "The next questions are about your relationships and sexual life. This information helps us provide better sexual health services. Remember, you can skip any question."
-   
   },
- {
-  "sectionCode": "B",
-  "section": "Sexual Health and Relationships",
-  "question": "14a. If yes, how old were you when you first had sex?",
-  "type": "number",
-  "placeholder": "Enter age in years",
-  "note": " If NO, please skip to Section C on page _ (Violence section)"
-},
+  {
+    "sectionCode": "B",
+    "section": "Sexual Health and Relationships",
+    "question": "14a. If yes, how old were you when you first had sex?",
+    "type": "number",
+    "placeholder": "Enter age in years",
+    "note": " If NO, please skip to Section C on page _ (Violence section)"
+  },
   {
     "sectionCode": "B",
     "section": "Sexual Health and Relationships",
@@ -374,6 +369,7 @@
     "sectionCode": "B",
     "section": "Sexual Health and Relationships",
     "question": "17. When you have anal sex, what role do you usually take?",
+    "type": "checkbox",
     "options": [
       "Receptive/bottom (receiving partner)",
       "Insertive/top (penetrating partner)",
@@ -429,22 +425,22 @@
     "section": "Sex Work",
     "description": "Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
     "question": "21. Have you ever exchanged sex for money, food, a place to stay, or other things you needed?",
-     "options": [
-    "Yes, I do this regularly now (within past month)",
-    "Yes, I did this in the past year",
-    "Yes, but not recently",
-    "No, never",
-    "Prefer not to say"
-  ],
-  "optionrule":"If you answered 'No, never' - skip next 2 questions, go to Section C"
+    "options": [
+      "Yes, I do this regularly now (within past month)",
+      "Yes, I did this in the past year",
+      "Yes, but not recently",
+      "No, never",
+      "Prefer not to say"
+    ],
+    "optionrule": "If you answered 'No, never' - skip next 2 questions, go to Section C"
   },
   {
     "sectionCode": "B",
     "section": "Sex Work",
     "description": "Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
     "question": "21 a. About how many clients do you see in a typical week",
-     "type": "number",
-     "placeholder": "Enter counts"
+    "type": "number",
+    "placeholder": "Enter counts"
   },
 
   {
@@ -464,7 +460,6 @@
     "section": "Physical Violence ",
     "question": "23. Someone has pushed, shoved, or grabbed me roughly",
     "options": ["Yes, this has happened", "No", "Prefer not to say"]
-    
   },
   {
     "sectionCode": "C",
@@ -750,15 +745,15 @@
     "section": "Online Harassment and Cyber Violence",
     "question": "57.Do you use any dating apps or online platforms to meet sexual or romantic partners?",
     "options": [
-      "Yes  (continue to next questions) ",
-      "No (skip to question 60)"
+      "Yes  ",
+      "No "
     ]
   },
   {
     "sectionCode": "C",
     "section": "Online Harassment and Cyber Violence",
     "question": "58. Have been harassed during the past year more than once while using the platform?",
-    "options": ["Yes  (continue to next questions)", "No (skip to question 60)"]
+    "options": ["Yes  ", "No "]
   },
   {
     "sectionCode": "C",
@@ -1548,15 +1543,12 @@
     ],
     "condition": "Show only if Q115 = Yes"
   },
-  
+
   {
     "sectionCode": "I",
     "section": "Help-Seeking After Violence",
     "question": "116. After experiencing violence, have you sought help from anyone?",
-    "options": [
-      "Yes",
-      "No"
-    ]
+    "options": ["Yes", "No"]
   },
   {
     "sectionCode": "I",
@@ -1579,11 +1571,7 @@
     "sectionCode": "I",
     "section": "Help-Seeking After Violence",
     "question": "116b. Did you receive the help you needed?",
-    "options": [
-      "Yes, completely",
-      "Yes, partially",
-      "No, not at all"
-    ]
+    "options": ["Yes, completely", "Yes, partially", "No, not at all"]
   },
   {
     "sectionCode": "I",
@@ -1876,496 +1864,411 @@
     ]
   },
   {
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "132. When you decided to pursue gender-affirming services (hormones, surgery, etc.), what did you hope to become or achieve?",
-  "options": [
-    "To feel comfortable and authentic in my body",
-    "To be recognized and accepted in my true gender",
-    "To improve my mental health and wellbeing",
-    "To have better employment opportunities",
-    "To be able to have romantic relationships",
-    "To be accepted by my family",
-    "To live without fear of violence or discrimination",
-    "To match my appearance with how I feel inside",
-    "To access better healthcare",
-    "To participate fully in society",
-    "To be a role model for other transgender people",
-    "To have legal recognition of my gender",
-    "To simply be myself without hiding",
-    "Other",
-    "Not applicable (not transgender or not pursuing gender-affirming services)",
-    "Prefer not to say"
-  ]
-},
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "132. When you decided to pursue gender-affirming services (hormones, surgery, etc.), what did you hope to become or achieve?",
+    "options": [
+      "To feel comfortable and authentic in my body",
+      "To be recognized and accepted in my true gender",
+      "To improve my mental health and wellbeing",
+      "To have better employment opportunities",
+      "To be able to have romantic relationships",
+      "To be accepted by my family",
+      "To live without fear of violence or discrimination",
+      "To match my appearance with how I feel inside",
+      "To access better healthcare",
+      "To participate fully in society",
+      "To be a role model for other transgender people",
+      "To have legal recognition of my gender",
+      "To simply be myself without hiding",
+      "Other",
+      "Not applicable (not transgender or not pursuing gender-affirming services)",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "133. How do you see yourself five years from now? What do you hope to achieve?",
-  "options": [
-    "Having a stable, well-paying job",
-    "Running my own successful business",
-    "Being financially independent",
-    "Owning my own home/property",
-    "Having savings and financial security",
-    "Being in a loving, committed relationship",
-    "Having children or raising a family",
-    "Being reconciled with my family",
-    "Living independently",
-    "Being completely out and open about who I am",
-    "Being physically healthy",
-    "Being mentally healthy and happy",
-    "Having completed my gender transition (if applicable)",
-    "Living free from substance use issues",
-    "Being accepted in my community",
-    "Having a strong network of friends",
-    "Being a leader in the LGBTQ+ community",
-    "Helping other LGBTQ+ people",
-    "Being politically or socially active",
-    "Having completed my education/degree",
-    "Having learned new skills or trades",
-    "Speaking English fluently",
-    "Having all my legal documents updated",
-    "Having legal protection from discrimination",
-    "Being more confident and self-assured",
-    "Having achieved my spiritual goals",
-    "Being at peace with myself",
-    "I don't think about the future",
-    "I'm not sure/don't know",
-    "Other",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "133. How do you see yourself five years from now? What do you hope to achieve?",
+    "options": [
+      "Having a stable, well-paying job",
+      "Running my own successful business",
+      "Being financially independent",
+      "Owning my own home/property",
+      "Having savings and financial security",
+      "Being in a loving, committed relationship",
+      "Having children or raising a family",
+      "Being reconciled with my family",
+      "Living independently",
+      "Being completely out and open about who I am",
+      "Being physically healthy",
+      "Being mentally healthy and happy",
+      "Having completed my gender transition (if applicable)",
+      "Living free from substance use issues",
+      "Being accepted in my community",
+      "Having a strong network of friends",
+      "Being a leader in the LGBTQ+ community",
+      "Helping other LGBTQ+ people",
+      "Being politically or socially active",
+      "Having completed my education/degree",
+      "Having learned new skills or trades",
+      "Speaking English fluently",
+      "Having all my legal documents updated",
+      "Having legal protection from discrimination",
+      "Being more confident and self-assured",
+      "Having achieved my spiritual goals",
+      "Being at peace with myself",
+      "I don't think about the future",
+      "I'm not sure/don't know",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "134. Who do you trust most to support you in achieving your life goals over the next five years?",
-  "options": [
-    "My family members",
-    "My life partner/spouse",
-    "My close friends",
-    "My hijra guru (if applicable)",
-    "My hijra gharana/community",
-    "LGBTQ+ friends/community",
-    "Religious/spiritual leaders or community",
-    "Healthcare providers at LGBTQ-friendly clinics (like Sabrang)",
-    "Counselors or therapists",
-    "Community-based organizations (CBOs)",
-    "NGO workers or social workers",
-    "Support groups",
-    "Online LGBTQ+ community",
-    "Government welfare officers",
-    "Legal aid organizations",
-    "Myself - I rely on myself",
-    "No one - I don't have support",
-    "God/Higher power",
-    "Other",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "134. Who do you trust most to support you in achieving your life goals over the next five years?",
+    "options": [
+      "My family members",
+      "My life partner/spouse",
+      "My close friends",
+      "My hijra guru (if applicable)",
+      "My hijra gharana/community",
+      "LGBTQ+ friends/community",
+      "Religious/spiritual leaders or community",
+      "Healthcare providers at LGBTQ-friendly clinics (like Sabrang)",
+      "Counselors or therapists",
+      "Community-based organizations (CBOs)",
+      "NGO workers or social workers",
+      "Support groups",
+      "Online LGBTQ+ community",
+      "Government welfare officers",
+      "Legal aid organizations",
+      "Myself - I rely on myself",
+      "No one - I don't have support",
+      "God/Higher power",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "135. What kind of support is most important for you to achieve your goals?",
-  "options": [
-    "Financial support/money",
-    "Emotional support and encouragement",
-    "Practical advice and guidance",
-    "Help with job hunting or business",
-    "Help with education or training",
-    "Help navigating legal systems",
-    "Help with housing",
-    "Healthcare and medical support",
-    "Connections to helpful people/networks",
-    "Protection from discrimination or violence",
-    "Help with family reconciliation",
-    "Spiritual/religious guidance",
-    "Just having someone who believes in me",
-    "Other",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "135. What kind of support is most important for you to achieve your goals?",
+    "options": [
+      "Financial support/money",
+      "Emotional support and encouragement",
+      "Practical advice and guidance",
+      "Help with job hunting or business",
+      "Help with education or training",
+      "Help navigating legal systems",
+      "Help with housing",
+      "Healthcare and medical support",
+      "Connections to helpful people/networks",
+      "Protection from discrimination or violence",
+      "Help with family reconciliation",
+      "Spiritual/religious guidance",
+      "Just having someone who believes in me",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "136. What should a much younger LGBTQ+ community member (18-25 years old) consider and plan for in their life?",
-  "options": [
-    "Complete your education - it opens many doors",
-    "Learn English and computer skills",
-    "Get vocational training in a skill",
-    "Save money whenever you can",
-    "Come out only when it's safe to do so",
-    "Don't rush gender transition - think carefully",
-    "Find and connect with LGBTQ+ community early",
-    "Be proud of who you are",
-    "Try to maintain family relationships if possible",
-    "Choose your friends and partners carefully",
-    "Don't depend completely on any one person",
-    "Learn to be independent",
-    "Take care of your mental health",
-    "Avoid alcohol and drugs",
-    "Practice safe sex always",
-    "Get regular HIV/STI testing",
-    "If taking hormones, do it under medical supervision",
-    "Focus on building a career early",
-    "Don't rely on sex work as only option",
-    "Start saving money from young age",
-    "Get your legal documents in order",
-    "Know your legal rights",
-    "Learn how to stay safe",
-    "Document any violence or discrimination",
-    "Don't be afraid to ask for help",
-    "Build your confidence and self-worth",
-    "Don't let discrimination define you",
-    "Have dreams and work toward them",
-    "Help other LGBTQ+ people when you can",
-    "Life will have challenges - be prepared",
-    "Society is changing but slowly",
-    "Choose your battles wisely",
-    "I don't have advice for younger people",
-    "Other advice",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "136. What should a much younger LGBTQ+ community member (18-25 years old) consider and plan for in their life?",
+    "options": [
+      "Complete your education - it opens many doors",
+      "Learn English and computer skills",
+      "Get vocational training in a skill",
+      "Save money whenever you can",
+      "Come out only when it's safe to do so",
+      "Don't rush gender transition - think carefully",
+      "Find and connect with LGBTQ+ community early",
+      "Be proud of who you are",
+      "Try to maintain family relationships if possible",
+      "Choose your friends and partners carefully",
+      "Don't depend completely on any one person",
+      "Learn to be independent",
+      "Take care of your mental health",
+      "Avoid alcohol and drugs",
+      "Practice safe sex always",
+      "Get regular HIV/STI testing",
+      "If taking hormones, do it under medical supervision",
+      "Focus on building a career early",
+      "Don't rely on sex work as only option",
+      "Start saving money from young age",
+      "Get your legal documents in order",
+      "Know your legal rights",
+      "Learn how to stay safe",
+      "Document any violence or discrimination",
+      "Don't be afraid to ask for help",
+      "Build your confidence and self-worth",
+      "Don't let discrimination define you",
+      "Have dreams and work toward them",
+      "Help other LGBTQ+ people when you can",
+      "Life will have challenges - be prepared",
+      "Society is changing but slowly",
+      "Choose your battles wisely",
+      "I don't have advice for younger people",
+      "Other advice",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "137. Do you consider aging transgender individuals (60+ years) to be vulnerable or at higher risk?",
-  "options": [
-    "Yes, definitely - they face many unique challenges",
-    "Yes, somewhat - they face some additional challenges",
-    "No more than anyone else aging",
-    "No, they are not particularly vulnerable",
-    "Not sure/Don't know",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "137. Do you consider aging transgender individuals (60+ years) to be vulnerable or at higher risk?",
+    "options": [
+      "Yes, definitely - they face many unique challenges",
+      "Yes, somewhat - they face some additional challenges",
+      "No more than anyone else aging",
+      "No, they are not particularly vulnerable",
+      "Not sure/Don't know",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "138. What specific challenges do you think aging transgender and LGBTQ+ individuals face?",
-  "options": [
-    "Lack of family support in old age",
-    "Poverty and financial insecurity",
-    "Lack of housing or being thrown out",
-    "Health problems and no access to care",
-    "Difficulty continuing hormone therapy",
-    "Loneliness and social isolation",
-    "Being unable to work or earn",
-    "Discrimination in healthcare for elderly",
-    "No legal protection or pension",
-    "Physical weakness making them targets for violence",
-    "Mental health issues and depression",
-    "No one to care for them when sick",
-    "Being abandoned by gharana/community",
-    "Loss of dignity in old age",
-    "Difficulty accessing government welfare schemes",
-    "I don't think they face special challenges",
-    "Other",
-    "Not sure/Don't know",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "138. What specific challenges do you think aging transgender and LGBTQ+ individuals face?",
+    "options": [
+      "Lack of family support in old age",
+      "Poverty and financial insecurity",
+      "Lack of housing or being thrown out",
+      "Health problems and no access to care",
+      "Difficulty continuing hormone therapy",
+      "Loneliness and social isolation",
+      "Being unable to work or earn",
+      "Discrimination in healthcare for elderly",
+      "No legal protection or pension",
+      "Physical weakness making them targets for violence",
+      "Mental health issues and depression",
+      "No one to care for them when sick",
+      "Being abandoned by gharana/community",
+      "Loss of dignity in old age",
+      "Difficulty accessing government welfare schemes",
+      "I don't think they face special challenges",
+      "Other",
+      "Not sure/Don't know",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "139. What should we do to support aging transgender and LGBTQ+ individuals?",
-  "options": [
-    "Create old age homes specifically for LGBTQ+ elders",
-    "Provide regular pension or financial support",
-    "Ensure access to affordable healthcare",
-    "Provide free/subsidized hormone therapy",
-    "Create day care centers where elders can socialize",
-    "Home-based care services",
-    "Legal aid for property and pension rights",
-    "Mental health and counseling services",
-    "Regular health checkups",
-    "Food security programs",
-    "Transportation assistance",
-    "Helpline specifically for elderly LGBTQ+ people",
-    "Intergenerational programs connecting youth and elders",
-    "Respect and dignity programs in healthcare",
-    "Training for healthcare workers on elderly LGBTQ+ care",
-    "Government recognition of LGBTQ+ elders as vulnerable group",
-    "Housing assistance programs",
-    "Employment opportunities suitable for older adults",
-    "Other",
-    "Prefer not to say"
-  ]
-},
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "140. Because of extreme weather, environmental problems, or climate-related difficulties, I have had trouble accessing condoms, sexual health services, HIV/STI testing, or staying safe during sex.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "K",
+    "section": "Future Vision and Community Support",
+    "question": "139. What should we do to support aging transgender and LGBTQ+ individuals?",
+    "options": [
+      "Create old age homes specifically for LGBTQ+ elders",
+      "Provide regular pension or financial support",
+      "Ensure access to affordable healthcare",
+      "Provide free/subsidized hormone therapy",
+      "Create day care centers where elders can socialize",
+      "Home-based care services",
+      "Legal aid for property and pension rights",
+      "Mental health and counseling services",
+      "Regular health checkups",
+      "Food security programs",
+      "Transportation assistance",
+      "Helpline specifically for elderly LGBTQ+ people",
+      "Intergenerational programs connecting youth and elders",
+      "Respect and dignity programs in healthcare",
+      "Training for healthcare workers on elderly LGBTQ+ care",
+      "Government recognition of LGBTQ+ elders as vulnerable group",
+      "Housing assistance programs",
+      "Employment opportunities suitable for older adults",
+      "Other",
+      "Prefer not to say"
+    ]
+  },
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "140. Because of extreme weather, environmental problems, or climate-related difficulties, I have had trouble accessing condoms, sexual health services, HIV/STI testing, or staying safe during sex.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "141. In the past 12 months, extreme heat has affected my daily life, work, or health.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "141. In the past 12 months, extreme heat has affected my daily life, work, or health.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "142. In the past 12 months, flooding, heavy rains, or water-related disasters have affected me or my community.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "142. In the past 12 months, flooding, heavy rains, or water-related disasters have affected me or my community.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "143. Climate change or environmental problems have made it harder for me to access healthcare, medications, or health services.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "143. Climate change or environmental problems have made it harder for me to access healthcare, medications, or health services.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "144. Environmental or climate problems have increased stress, anxiety, or other mental health challenges for me.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "144. Environmental or climate problems have increased stress, anxiety, or other mental health challenges for me.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "145. I have had to move or migrate because of environmental problems, droughts, floods, or climate-related reasons.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "145. I have had to move or migrate because of environmental problems, droughts, floods, or climate-related reasons.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "146. During extreme weather or disasters, I faced discrimination or was denied help because of my gender identity or sexual orientation.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "146. During extreme weather or disasters, I faced discrimination or was denied help because of my gender identity or sexual orientation.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
-  "question": "147. I worry about how climate change or environmental problems will affect my life and safety in the future.",
-  "options": [
-    "True",
-    "False",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "148. Would you be interested in receiving any health services — such as testing guidance, linkage to care, or counselling — through a virtual platform, rather than visiting a facility in person?",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "L",
+    "section": "Climate Change & Sexual Health",
+    "question": "147. I worry about how climate change or environmental problems will affect my life and safety in the future.",
+    "options": ["True", "False", "Don't Know", "Prefer Not to Say"]
+  },
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "148. Would you be interested in receiving any health services — such as testing guidance, linkage to care, or counselling — through a virtual platform, rather than visiting a facility in person?",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "149. Do you feel comfortable reaching out to a health professional or service provider for support or information using online tools or your phone?",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "149. Do you feel comfortable reaching out to a health professional or service provider for support or information using online tools or your phone?",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "150. If you were to use a virtual service for your health needs, which of the following ways would you prefer to connect with a health worker or service?",
-  "options": [
-    "A phone call (voice only)",
-    "A WhatsApp voice call",
-    "A video call using an app such as Zoom or Google Meet",
-    "A text or chat-based platform (e.g., WhatsApp text, SMS, or online chat)",
-    "A dedicated health app on my phone",
-    "Don't know",
-    "Refuse to answer"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "150. If you were to use a virtual service for your health needs, which of the following ways would you prefer to connect with a health worker or service?",
+    "options": [
+      "A phone call (voice only)",
+      "A WhatsApp voice call",
+      "A video call using an app such as Zoom or Google Meet",
+      "A text or chat-based platform (e.g., WhatsApp text, SMS, or online chat)",
+      "A dedicated health app on my phone",
+      "Don't know",
+      "Refuse to answer"
+    ]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151a. It would feel more private or confidential",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151a. It would feel more private or confidential",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151b. It would be easier to access from where I live",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151b. It would be easier to access from where I live",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151c. It would feel less stigmatising or judgement-free",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151c. It would feel less stigmatising or judgement-free",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151d. It would save me time or money on travel",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151d. It would save me time or money on travel",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151e. I would feel safer being open about my identity or health status",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151e. I would feel safer being open about my identity or health status",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151f. I would be able to get results or information faster",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151f. I would be able to get results or information faster",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "151g. It would make it easier to follow up on my care or treatment",
-  "options": [
-    "Yes",
-    "No",
-    "Don't Know",
-    "Prefer Not to Say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "151g. It would make it easier to follow up on my care or treatment",
+    "options": ["Yes", "No", "Don't Know", "Prefer Not to Say"]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "152. Is there any other important topic we didn't ask about?",
-  "options": [
-    "Experiences with dating and relationships",
-    "Issues related to aging as LGBTQ+ person",
-    "Experiences with police or legal system",
-    "Access to government schemes/welfare",
-    "Issues specific to rural areas",
-    "Experiences with religious institutions",
-    "Workplace discrimination details",
-    "Healthcare access barriers",
-    "Housing discrimination",
-    "Education discrimination",
-    "No, you covered everything",
-    "Yes, other topic",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "152. Is there any other important topic we didn't ask about?",
+    "options": [
+      "Experiences with dating and relationships",
+      "Issues related to aging as LGBTQ+ person",
+      "Experiences with police or legal system",
+      "Access to government schemes/welfare",
+      "Issues specific to rural areas",
+      "Experiences with religious institutions",
+      "Workplace discrimination details",
+      "Healthcare access barriers",
+      "Housing discrimination",
+      "Education discrimination",
+      "No, you covered everything",
+      "Yes, other topic",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "153. How did you feel about this interview?",
-  "options": [
-    "Very comfortable",
-    "Comfortable",
-    "Somewhat uncomfortable",
-    "Very uncomfortable",
-    "Prefer not to say"
-  ]
-},
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "153. How did you feel about this interview?",
+    "options": [
+      "Very comfortable",
+      "Comfortable",
+      "Somewhat uncomfortable",
+      "Very uncomfortable",
+      "Prefer not to say"
+    ]
+  },
 
-{
-  "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
-  "question": "154. Would you like a referral to any services?",
-  "options": [
-    "Yes, mental health services",
-    "Yes, legal aid",
-    "Yes, medical services",
-    "Yes, support groups",
-    "Yes, employment services",
-    "Yes, housing support",
-    "Yes, substance use treatment",
-    "No, thank you",
-    "Prefer not to say"
-  ]
-}
+  {
+    "sectionCode": "M",
+    "section": "Virtual Health Services and Support",
+    "question": "154. Would you like a referral to any services?",
+    "options": [
+      "Yes, mental health services",
+      "Yes, legal aid",
+      "Yes, medical services",
+      "Yes, support groups",
+      "Yes, employment services",
+      "Yes, housing support",
+      "Yes, substance use treatment",
+      "No, thank you",
+      "Prefer not to say"
+    ]
+  }
 ]
