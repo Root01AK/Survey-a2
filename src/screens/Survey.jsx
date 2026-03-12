@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import questions from "../data/questions.json";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import Select from "react-select";
@@ -21,6 +21,8 @@ export default function MultiStepForm() {
     message: "",
     exitSurvey: false,
   });
+
+  
   /* ================= STATE ================= */
 
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -28,7 +30,8 @@ export default function MultiStepForm() {
   const [answers, setAnswers] = useState({});
   const today = new Date().toISOString().split("T")[0];
   const [showOtp, setShowOtp] = useState(false);
-  
+  const [showSectionIntro, setShowSectionIntro] = useState(true);
+
   const [formData, setFormData] = useState({
     date: today,
     clinic: "",
@@ -139,6 +142,10 @@ export default function MultiStepForm() {
   /* ================= NEXT ================= */
 
   const handleNext = () => {
+    if (showSectionIntro && currentSection.code !== "CONSENT") {
+  setShowSectionIntro(false);
+  return;
+}
     if (currentSection.code === "CONSENT") {
       setCurrentSectionIndex(1);
       return;
@@ -631,6 +638,10 @@ export default function MultiStepForm() {
       [qIndex]: updated,
     }));
   };
+  
+useEffect(() => {
+  setShowSectionIntro(true);
+}, [currentSectionIndex]);
   /* ================= UI ================= */
 
   return (
@@ -641,9 +652,11 @@ export default function MultiStepForm() {
           width: currentSection.code === "CONSENT" ? "400px" : "800px",
         }}
       >
-        <h2>
-          SECTION {currentSection.code}: {currentSubSection}
-        </h2>
+        {!showSectionIntro && (
+  <h2>
+    SECTION {currentSection.code}: {currentSubSection}
+  </h2>
+)}
 
         {/* ===== Progress ===== */}
 
@@ -760,8 +773,33 @@ export default function MultiStepForm() {
 
         {/* ================= QUESTIONS ================= */}
 
-        {currentSection.code !== "CONSENT" && currentQuestion && (
-          <div style={styles.questionBlock}>
+  
+{/* ===== SECTION INTRO PAGE ===== */}
+
+{currentSection.code !== "CONSENT" && showSectionIntro && (
+  <div style={{ marginBottom: "30px" }}>
+    <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#2f5597" }}>
+      {currentSubSection}
+    </h2>
+
+   {currentQuestion?.description && (
+      <p style={{ marginTop: "10px", color: "#555", lineHeight: "1.6" }}>
+        {currentQuestion.description}
+      </p>
+    )}
+
+    {currentQuestion?.note && (
+      <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+        {currentQuestion.note}
+      </p>
+    )}
+  </div>
+)}
+
+{/* ===== QUESTIONS ===== */}
+
+{currentSection.code !== "CONSENT" && !showSectionIntro && currentQuestion && (
+  <div style={styles.questionBlock}>
             {currentQuestion.note && (
               <p style={styles.note}>{currentQuestion.note}</p>
             )}

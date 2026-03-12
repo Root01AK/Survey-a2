@@ -1,6 +1,8 @@
 [
   {
     "sectionCode": "A",
+    "mainSection":"About You",
+    "maindesc":"Let's start with some basic information about yourself. This helps us understand who we're serving.",
     "section": "About You",
     "question": "1. What is your age?",
     "description": "Let's start with some basic information about yourself. This helps us understand who we're serving.",
@@ -316,7 +318,9 @@
   },
   {
     "sectionCode": "B",
-    "section": "Sexual Health and Relationships",
+    "mainsection":"RELATIONSHIPS AND SEXUAL HEALTH",
+    "maindesc":"The next questions are about your relationships and sexual life. This information helps us provide better sexual health services. Remember, you can skip any question.",
+    "section": "RELATIONSHIPS AND SEXUAL HEALTH",
     "description": "The next questions are about your relationships and sexual life. This information helps us provide better sexual health services.",
     "question": "14. Have you ever had sex with someone?",
     "options": [
@@ -415,6 +419,7 @@
   {
     "sectionCode": "B",
     "section": "Sex Work",
+    "description":"Some people exchange sex for money or other things they need. There is no judgment - we just want to understand so we can provide appropriate support.",
     "question": "21. Have you ever exchanged sex for money, food, a place to stay, or other things you needed?",
     "options": [
       { "text": "Yes, I do this regularly now (within past month)", "code": 1 },
@@ -446,7 +451,10 @@
   },
   {
     "sectionCode": "C",
+    "mainsection":"Experiences of Violence and Discrimination",
+    "maindesc":"These next questions ask about difficult experiences like violence and discrimination. We know these can be hard to talk about. Please know that what you share is confidential and will help us create better support systems. Take your time, and remember you can skip questions or take a break anytime.",
     "section": "Physical Violence",
+    "description":"We want to understand if you have experienced physical violence because of your sexual orientation or gender identity. For each statement below, please tell us if this has happened to you in the past 12 months.",
     "question": "23. Someone has pushed, shoved, or grabbed me roughly",
     "options": [
       { "text": "Yes, this has happened", "code": 1 },
@@ -517,6 +525,7 @@
   {
     "sectionCode": "C",
     "section": "Sexual Violence",
+    "description":"These questions are about unwanted sexual experiences. This includes being forced, pressured, or tricked into sexual activity when you didn't want to. These experiences can be very painful to talk about - please take your time.",
     "question": "29. Someone touched me sexually when I didn't want them to",
     "options": [
       { "text": "Yes", "code": 1 },
@@ -805,7 +814,8 @@
   },
   {
     "sectionCode": "C",
-    "section": "Verbal Abuse",
+    "section": "Verbal Abuse and Hurtful Words",
+    "description":"Sometimes people hurt us with words. These questions ask about verbal harassment and emotional abuse you may have experienced.",
     "question": "56. How often does this kind of verbal abuse happen to you?",
     "options": [
       { "text": "Every day", "code": 1 },
@@ -818,7 +828,8 @@
   },
   {
     "sectionCode": "C",
-    "section": "Online Harassment",
+    "section": "Online Harassment and Cyber Violence",
+    "description":"These questions are about violence and harassment that happens online - on social media, dating apps, WhatsApp, or other digital platforms.",
     "question": "57. Do you use any dating apps or online platforms to meet sexual or romantic partners?",
     "options": [
       { "text": "Yes", "code": 1 },
@@ -953,6 +964,8 @@
 
   {
     "sectionCode": "C",
+    "mainsection":"INSTITUTIONAL AND SYSTEMIC DISCRIMINATION",
+    "maindesc":"These questions are about discrimination and violence from institutions like police, hospitals, employers, and schools.",
     "section": "Legal Identity Documents",
     "question": "70. I have tried to change my name on legal documents (Aadhaar, passport, PAN card, etc.) to match my affirmed identity",
     "options": [
@@ -1155,8 +1168,9 @@
 
   {
     "sectionCode": "D",
+    "maindesc":"SUBSTANCE USE AND ALCOHOL",
+    "mainsection":"These questions ask about your use of alcohol, drugs, and other substances. Many people use substances to cope with stress or for other reasons. There is no judgment - this information helps us provide better health services.",
     "section": "General Substance Use",
-    "question": "88. Have you ever used any of the following substances? (Check all that apply)",
     "options": [
       { "text": "None", "code": 1 },
       { "text": "Cannabis/Marijuana/Ganja", "code": 2 },
@@ -1188,6 +1202,7 @@
   {
     "sectionCode": "D",
     "section": "Chemsex (Using Drugs During Sex)",
+    "description":"'Chemsex' means using drugs specifically before or during sex to enhance, prolong, or facilitate sexual activity. This section asks about this practice.",
     "question": "90. Have you ever used drugs specifically to initiate, enhance, or prolong sexual activity? (Do not include alcohol, tobacco, or cannabis)",
     "options": [
       { "text": "Yes, in the past month", "code": 1 },
@@ -1213,6 +1228,7 @@
   {
     "sectionCode": "D",
     "section": "Injection Drug Use",
+    "description":"These questions ask about injecting drugs with needles. 'Slamming' means injecting drugs during sex.",
     "question": "91. Have you ever injected drugs (using a needle/syringe)?",
     "options": [
       { "text": "Yes, currently (within past month)", "code": 1 },
@@ -1291,6 +1307,8 @@
   },
   {
     "sectionCode": "E",
+    "mainsection":"MENTAL HEALTH AND EMOTIONAL WELLBEING",
+    "maindesc":"These questions are about your mental health and emotional wellbeing. Many people in our community face mental health challenges due to discrimination and stress. This information helps us provide appropriate support services.",
     "section": "Depression and Anxiety",
     "description": "Over the past 2 weeks, how often have you been bothered by the following problems?",
     "question": "94. Feeling nervous, anxious, or on edge",
@@ -1369,6 +1387,8 @@
   },
 {
   "sectionCode": "F",
+  "mainsection":"HEALTHCARE ACCESS AND HIV/STI SERVICES",
+  "maindesc":"These questions ask about your experiences accessing healthcare, including HIV and STI testing, PrEP, and for transgender participants, hormone therapy.",
   "section": "Healthcare Access",
   "question": "101. Have you ever accessed healthcare services (doctor, clinic, hospital)?",
   "options": [
@@ -1487,7 +1507,8 @@
 },
 {
   "sectionCode": "F",
-  "section": "Gender-Affirming Care",
+  "section": "Gender-Affirming Care (For Transgender Participants)",
+  "description":"If you are transgender or taking hormones for gender affirmation, please answer these questions. Otherwise, skip to Section G.",
   "question": "106. Are you currently using hormones for gender affirmation?",
   "options": [
     { "text": "Yes, prescribed by doctor", "code": 1 },
@@ -1499,6 +1520,8 @@
 },
 {
   "sectionCode": "G",
+  "mainsection":"FAMILY, FRIENDS, AND SOCIAL SUPPORT",
+  "maindesc":"These questions ask about your relationships with family members, friends, and the broader community, and how they respond to your sexual orientation or gender identity.",
   "section": "Family Relationships",
   "question": "107. Does your family know about your sexual orientation or gender identity?",
   "options": [
@@ -1522,6 +1545,8 @@
 },
 {
   "sectionCode": "H",
+  "mainsection":"AWARENESS OF RIGHTS",
+  "maindesc":"These questions explore your feelings about your awareness of legal rights.",
   "section": "Awareness of Legal Rights",
   "question": "112. Are you aware that Section 377 was struck down in 2018?",
   "options": [
@@ -1532,11 +1557,130 @@
 },
 {
   "sectionCode": "I",
+  "mainsection":"HELP-SEEKING AND SUPPORT RESOURCES",
+  "maindesc":"These final questions ask about your awareness of support services, whether you have sought help after experiencing violence, and what resources would be most helpful to you.",
   "section": "Awareness of Services",
   "question": "114. Are you aware of any organizations or services that provide support to LGBTQ+ people?",
   "options": [
     { "text": "Yes", "code": 1 },
     { "text": "No", "code": 2 }
+  ]
+},
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "115a. How helpful were these services?",
+  "options": [
+    { "text": "Very helpful", "code": 1 },
+    { "text": "Somewhat helpful", "code": 2 },
+    { "text": "Not very helpful", "code": 3 },
+    { "text": "Not helpful at all", "code": 5 }
+  ],
+  "condition": "Ask only if Q115 = Yes"
+},
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "description":"Only answer these if you experienced violence (Section C)",
+  "question": "116. After experiencing violence, have you sought help from anyone?",
+  "options": [
+    { "text": "Yes", "code": 1 },
+    { "text": "No", "code": 2 }
+  ],
+  "skipLogic": "If code=2 skip to Q117"
+},
+
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "116a. From whom did you seek help?",
+  "type": "checkbox",
+  "instruct": "Check all that apply",
+  "options": [
+    { "text": "Friends", "code": 1 },
+    { "text": "Family", "code": 2 },
+    { "text": "LGBTQ+ organization/NGO", "code": 3 },
+    { "text": "Police", "code": 4 },
+    { "text": "Healthcare provider", "code": 5 },
+    { "text": "Lawyer", "code": 6 },
+    { "text": "Religious leader", "code": 7 },
+    { "text": "Crisis helpline", "code": 8 },
+    { "text": "Online support groups", "code": 9 },
+    { "text": "Other", "code": 96 }
+  ]
+},
+
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "116b. Did you receive the help you needed?",
+  "options": [
+    { "text": "Yes, completely", "code": 1 },
+    { "text": "Yes, partially", "code": 2 },
+    { "text": "No, not at all", "code": 3 }
+  ]
+},
+
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "116c. Have you ever reported violence to the police?",
+  "options": [
+    { "text": "Yes, they took action", "code": 1 },
+    { "text": "Yes, but they didn't help", "code": 2 },
+    { "text": "Yes, but they made it worse", "code": 3 },
+    { "text": "No, never reported", "code": 4 }
+  ]
+},
+
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "116d. What are the main reasons you did not seek help after violence?",
+  "type": "checkbox",
+  "instruct": "Check all that apply",
+  "options": [
+    { "text": "Ashamed or embarrassed", "code": 1 },
+    { "text": "Didn't think it was serious enough", "code": 2 },
+    { "text": "Didn't know where to go", "code": 3 },
+    { "text": "Feared more discrimination", "code": 4 },
+    { "text": "Feared retaliation from perpetrator", "code": 5 },
+    { "text": "Didn't think anyone would help", "code": 6 },
+    { "text": "Couldn't afford services", "code": 7 },
+    { "text": "Feared family would find out", "code": 8 },
+    { "text": "Previous bad experience seeking help", "code": 9 },
+    { "text": "I did seek help", "code": 10 },
+    { "text": "Other", "code": 96 }
+  ]
+},
+
+{
+  "sectionCode": "I",
+  "section": "Help-Seeking After Violence",
+  "question": "117. When you face problems or violence, where do you seek support?",
+  "type": "ranking",
+  "instruct": "Rank your top 3 sources",
+  "options": [
+    { "text": "Friends (LGBTQ+ or general friends)", "code": 1 },
+    { "text": "Family members", "code": 2 },
+    { "text": "Hijra guru", "code": 3 },
+    { "text": "Hijra gharana/community", "code": 4 },
+    { "text": "LGBTQ+ organizations/NGOs", "code": 5 },
+    { "text": "Police", "code": 6 },
+    { "text": "Healthcare providers", "code": 7 },
+    { "text": "Sabrang or LGBTQ-friendly clinics", "code": 8 },
+    { "text": "Lawyer/legal aid services", "code": 9 },
+    { "text": "Religious or spiritual leaders", "code": 10 },
+    { "text": "Crisis helpline", "code": 11 },
+    { "text": "Online support groups/social media", "code": 12 },
+    { "text": "Garima Grih shelter", "code": 13 },
+    { "text": "Support groups (in-person)", "code": 14 },
+    { "text": "Counselor or therapist", "code": 15 },
+    { "text": "Social worker", "code": 16 },
+    { "text": "Government welfare office", "code": 17 },
+    { "text": "I handle problems alone", "code": 18 },
+    { "text": "Other", "code": 96 },
+    { "text": "Prefer not to say", "code": 98 }
   ]
 },
 {
@@ -1593,7 +1737,9 @@
 
 {
   "sectionCode": "J",
-  "section": "Capacity Building and Training Needs",
+  "mainsection": "Capacity Building and Training Needs",
+  "maindesc":"We want to understand what skills, knowledge, and training would be most helpful to empower you and our community. This helps us design programs that truly meet your needs.",
+  "section":"Capacity Building and Training Needs",
   "question": "122. Would you be interested in receiving training or capacity building support?",
   "options": [
     { "text": "Yes, very interested", "code": 1 },
@@ -1679,34 +1825,264 @@
     { "text": "Prefer not to say", "code": 98 }
   ]
 },
+{
+  "sectionCode": "J",
+  "section": "Capacity Building and Training",
+  "question": "127. Have you ever received any training or capacity building from YRGCARE or other organizations?",
+  "options": [
+    { "text": "Yes, from YRGCARE", "code": 1 },
+    { "text": "Yes, from other organization(s)", "code": 2 },
+    { "text": "Yes, from both YRGCARE and others", "code": 3 },
+    { "text": "No, never received training", "code": 4 },
+    { "text": "Don't remember", "code": 97 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+
+{
+  "sectionCode": "J",
+  "section": "Capacity Building and Training",
+  "question": "128. How helpful was the training you received?",
+  "options": [
+    { "text": "Very helpful - I use what I learned regularly", "code": 1 },
+    { "text": "Somewhat helpful - I've used some of it", "code": 2 },
+    { "text": "Not very helpful", "code": 3 },
+    { "text": "Not helpful at all", "code": 4 },
+    { "text": "Not applicable", "code": 95 }
+  ],
+  "condition": "Ask only if Q127 = 1 or 2 or 3"
+},
+{
+  "sectionCode": "J",
+  "section": "Information Needs and Future Support",
+  "question": "129. What information or services would be most helpful to you?",
+  "type": "checkbox",
+  "instruct": "Select top 3",
+  "rules": "Select up to 3",
+  "options": [
+    { "text": "Information about legal rights", "code": 1 },
+    { "text": "Mental health counseling", "code": 2 },
+    { "text": "HIV/STI prevention and treatment", "code": 3 },
+    { "text": "Job training/employment assistance", "code": 4 },
+    { "text": "Safe housing options", "code": 5 },
+    { "text": "Support groups", "code": 6 },
+    { "text": "Gender-affirming healthcare", "code": 7 },
+    { "text": "Family counseling", "code": 8 },
+    { "text": "Substance use treatment", "code": 9 },
+    { "text": "Financial assistance", "code": 10 },
+    { "text": "Violence prevention programs", "code": 11 },
+    { "text": "Education/literacy programs", "code": 12 },
+    { "text": "Other", "code": 96 }
+  ]
+},
+
+{
+  "sectionCode": "J",
+  "section": "Information Needs and Future Support",
+  "question": "130. How would you prefer to receive support services?",
+  "type": "checkbox",
+  "instruct": "Check all that apply",
+  "options": [
+    { "text": "In-person at clinic", "code": 1 },
+    { "text": "Phone helpline", "code": 2 },
+    { "text": "Online/video counseling", "code": 3 },
+    { "text": "Mobile app", "code": 4 },
+    { "text": "Home visits", "code": 5 },
+    { "text": "Community meetings", "code": 6 },
+    { "text": "Peer support groups", "code": 7 },
+    { "text": "WhatsApp groups", "code": 8 }
+  ]
+},
+
+{
+  "sectionCode": "J",
+  "section": "Information Needs and Future Support",
+  "question": "131. Would you be interested in helping other LGBTQ+ people through peer education, support groups, or advocacy?",
+  "options": [
+    { "text": "Yes, very interested", "code": 1 },
+    { "text": "Yes, somewhat interested", "code": 2 },
+    { "text": "Maybe", "code": 3 },
+    { "text": "Not interested", "code": 4 }
+  ]
+},
 
 {
   "sectionCode": "K",
-  "section": "Future Vision and Community Support",
-  "question": "132. When pursuing gender-affirming services what did you hope to achieve?",
+  "section": "For Transgender Participants",
+  "description":"If you are transgender and have pursued or are pursuing gender-affirming services, please answer questions.",
+  "mainSection": "Your Aspirations and Future Vision",
+  "maindesc": "These questions help us understand your dreams, goals, and what you hope for your future. Your aspirations matter and can guide how we design support programs.",
+  "question": "132. When you decided to pursue gender-affirming services (hormones, surgery, etc.), what did you hope to achieve?",
+  "type": "checkbox",
+  "instruct": "Select all that apply",
   "options": [
-    { "text": "Feel comfortable in my body", "code": 1 },
-    { "text": "Be recognized in my true gender", "code": 2 },
-    { "text": "Improve mental health", "code": 3 },
-    { "text": "Better employment opportunities", "code": 4 },
-    { "text": "Romantic relationships", "code": 5 },
-    { "text": "Family acceptance", "code": 6 },
-    { "text": "Live without discrimination", "code": 7 },
-    { "text": "Match appearance with identity", "code": 8 },
-    { "text": "Access better healthcare", "code": 9 },
-    { "text": "Participate fully in society", "code": 10 },
-    { "text": "Be role model for others", "code": 11 },
-    { "text": "Legal gender recognition", "code": 12 },
-    { "text": "Be myself without hiding", "code": 13 },
+    { "text": "To feel comfortable and authentic in my body", "code": 1 },
+    { "text": "To be recognized and accepted in my true gender", "code": 2 },
+    { "text": "To improve my mental health and wellbeing", "code": 3 },
+    { "text": "To have better employment opportunities", "code": 4 },
+    { "text": "To have romantic relationships", "code": 5 },
+    { "text": "To be accepted by my family", "code": 6 },
+    { "text": "To live without fear of violence or discrimination", "code": 7 },
+    { "text": "To match my appearance with how I feel inside", "code": 8 },
+    { "text": "To access better healthcare", "code": 9 },
+    { "text": "To participate fully in society", "code": 10 },
+    { "text": "To be a role model for other transgender people", "code": 11 },
+    { "text": "To have legal recognition of my gender", "code": 12 },
+    { "text": "To simply be myself without hiding", "code": 13 },
     { "text": "Other", "code": 96 },
     { "text": "Not applicable", "code": 95 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+{
+  "sectionCode": "K",
+  "section": "Future Vision",
+  "Description": "The next questions are for everyone, regardless of gender identity.",
+  "question": "133. How do you see yourself five years from now? What do you hope to achieve?",
+  "type": "checkbox",
+  "instruct": "Select up to 5 that are most important to you",
+  "rules": "Select up to 5",
+  "options": [
+    { "text": "Having a stable, well-paying job", "code": 1 },
+    { "text": "Running my own successful business", "code": 2 },
+    { "text": "Being financially independent", "code": 3 },
+    { "text": "Owning my own home/property", "code": 4 },
+    { "text": "Having savings and financial security", "code": 5 },
+    { "text": "Being in a loving, committed relationship", "code": 6 },
+    { "text": "Having children or raising a family", "code": 7 },
+    { "text": "Being reconciled with my family", "code": 8 },
+    { "text": "Living independently", "code": 9 },
+    { "text": "Being completely out and open about who I am", "code": 10 },
+    { "text": "Being physically healthy", "code": 11 },
+    { "text": "Being mentally healthy and happy", "code": 12 },
+    { "text": "Having completed my gender transition", "code": 13 },
+    { "text": "Living free from substance use issues", "code": 14 },
+    { "text": "Being accepted in my community", "code": 15 },
+    { "text": "Having a strong network of friends", "code": 16 },
+    { "text": "Being a leader in the LGBTQ+ community", "code": 17 },
+    { "text": "Helping other LGBTQ+ people", "code": 18 },
+    { "text": "Being politically or socially active", "code": 19 },
+    { "text": "Having completed my education/degree", "code": 20 },
+    { "text": "Having learned new skills or trades", "code": 21 },
+    { "text": "Speaking English fluently", "code": 22 },
+    { "text": "Having all my legal documents updated", "code": 23 },
+    { "text": "Having legal protection from discrimination", "code": 24 },
+    { "text": "Being more confident and self-assured", "code": 25 },
+    { "text": "Having achieved my spiritual goals", "code": 26 },
+    { "text": "Being at peace with myself", "code": 27 },
+    { "text": "I don't think about the future", "code": 28 },
+    { "text": "I'm not sure/don't know", "code": 29 },
+    { "text": "Other", "code": 96 },
     { "text": "Prefer not to say", "code": 98 }
   ]
 },
 
 {
   "sectionCode": "K",
-  "section": "Future Vision and Community Support",
+  "section": "Support in Achieving Goals",
+  "question": "134. Who do you trust most to support you in achieving your life goals over the next five years?",
+  "type": "ranking",
+  "instruct": "Rank your top 3 (1 = most trusted)",
+  "options": [
+    { "text": "My family members", "code": 1 },
+    { "text": "My life partner/spouse", "code": 2 },
+    { "text": "My close friends", "code": 3 },
+    { "text": "My hijra guru", "code": 4 },
+    { "text": "My hijra gharana/community", "code": 5 },
+    { "text": "LGBTQ+ friends/community", "code": 6 },
+    { "text": "Religious/spiritual leaders", "code": 7 },
+    { "text": "Healthcare providers at LGBTQ-friendly clinics", "code": 8 },
+    { "text": "Counselors or therapists", "code": 9 },
+    { "text": "Community-based organizations", "code": 10 },
+    { "text": "NGO workers or social workers", "code": 11 },
+    { "text": "Support groups", "code": 12 },
+    { "text": "Online LGBTQ+ community", "code": 13 },
+    { "text": "Government welfare officers", "code": 14 },
+    { "text": "Legal aid organizations", "code": 15 },
+    { "text": "Myself - I rely on myself", "code": 16 },
+    { "text": "No one - I don't have support", "code": 17 },
+    { "text": "God/Higher power", "code": 18 },
+    { "text": "Other", "code": 96 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Support in Achieving Goals",
+  "question": "135. What kind of support is most important for you to achieve your goals?",
+  "type": "checkbox",
+  "instruct": "Select top 3",
+  "rules": "Select up to 3",
+  "options": [
+    { "text": "Financial support/money", "code": 1 },
+    { "text": "Emotional support and encouragement", "code": 2 },
+    { "text": "Practical advice and guidance", "code": 3 },
+    { "text": "Help with job hunting or business", "code": 4 },
+    { "text": "Help with education or training", "code": 5 },
+    { "text": "Help navigating legal systems", "code": 6 },
+    { "text": "Help with housing", "code": 7 },
+    { "text": "Healthcare and medical support", "code": 8 },
+    { "text": "Connections to helpful people/networks", "code": 9 },
+    { "text": "Protection from discrimination or violence", "code": 10 },
+    { "text": "Help with family reconciliation", "code": 11 },
+    { "text": "Spiritual/religious guidance", "code": 12 },
+    { "text": "Just having someone who believes in me", "code": 13 },
+    { "text": "Other", "code": 96 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Wisdom for the Next Generation",
+  "description":"Your experiences and insights can help younger community members plan for their lives.",
+  "question": "136. What advice would you give a younger LGBTQ+ community member (18–25 years old)?",
+  "type": "checkbox",
+  "instruct": "Select all important advice",
+  "options": [
+    { "text": "Complete your education", "code": 1 },
+    { "text": "Learn English and computer skills", "code": 2 },
+    { "text": "Get vocational training", "code": 3 },
+    { "text": "Save money whenever you can", "code": 4 },
+    { "text": "Come out only when it is safe", "code": 5 },
+    { "text": "Do not rush gender transition", "code": 6 },
+    { "text": "Connect with LGBTQ+ community early", "code": 7 },
+    { "text": "Be proud of who you are", "code": 8 },
+    { "text": "Maintain family relationships if possible", "code": 9 },
+    { "text": "Choose friends and partners carefully", "code": 10 },
+    { "text": "Do not depend completely on one person", "code": 11 },
+    { "text": "Learn to be independent", "code": 12 },
+    { "text": "Take care of your mental health", "code": 13 },
+    { "text": "Avoid alcohol and drugs", "code": 14 },
+    { "text": "Practice safe sex", "code": 15 },
+    { "text": "Get regular HIV/STI testing", "code": 16 },
+    { "text": "Use medical supervision for hormones", "code": 17 },
+    { "text": "Focus on building a career early", "code": 18 },
+    { "text": "Do not rely only on sex work", "code": 19 },
+    { "text": "Start saving money early", "code": 20 },
+    { "text": "Get legal documents in order", "code": 21 },
+    { "text": "Know your legal rights", "code": 22 },
+    { "text": "Learn how to stay safe", "code": 23 },
+    { "text": "Document violence or discrimination", "code": 24 },
+    { "text": "Do not be afraid to ask for help", "code": 25 },
+    { "text": "Build confidence and self-worth", "code": 26 },
+    { "text": "Do not let discrimination define you", "code": 27 },
+    { "text": "Have dreams and work toward them", "code": 28 },
+    { "text": "Help other LGBTQ+ people", "code": 29 },
+    { "text": "Life will have challenges - be prepared", "code": 30 },
+    { "text": "Society is changing but slowly", "code": 31 },
+    { "text": "Choose your battles wisely", "code": 32 },
+    { "text": "I don't have advice for younger people", "code": 33 },
+    { "text": "Other", "code": 96 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Supporting Aging Transgender and LGBTQ+ Individuals",
+  "description":"As our community members age, they may face unique challenges. Your perspectives help us plan for elder care.",
   "question": "137. Do you consider aging transgender individuals vulnerable?",
   "options": [
     { "text": "Yes definitely", "code": 1 },
@@ -1717,10 +2093,71 @@
     { "text": "Prefer not to say", "code": 98 }
   ]
 },
+{
+  "sectionCode": "K",
+  "section": "Aging and Future Support",
+  "question": "138. What specific challenges do you think aging transgender and LGBTQ+ individuals face?",
+  "type": "checkbox",
+  "instruct": "Select all that apply",
+  "options": [
+    { "text": "Lack of family support in old age", "code": 1 },
+    { "text": "Poverty and financial insecurity", "code": 2 },
+    { "text": "Lack of housing or being thrown out", "code": 3 },
+    { "text": "Health problems and no access to care", "code": 4 },
+    { "text": "Difficulty continuing hormone therapy", "code": 5 },
+    { "text": "Loneliness and social isolation", "code": 6 },
+    { "text": "Being unable to work or earn", "code": 7 },
+    { "text": "Discrimination in healthcare for elderly", "code": 8 },
+    { "text": "No legal protection or pension", "code": 9 },
+    { "text": "Physical weakness making them targets for violence", "code": 10 },
+    { "text": "Mental health issues and depression", "code": 11 },
+    { "text": "No one to care for them when sick", "code": 12 },
+    { "text": "Being abandoned by gharana/community", "code": 13 },
+    { "text": "Loss of dignity in old age", "code": 14 },
+    { "text": "Difficulty accessing government welfare schemes", "code": 15 },
+    { "text": "I don't think they face special challenges", "code": 16 },
+    { "text": "Other", "code": 96 },
+    { "text": "Not sure/Don't know", "code": 97 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
+
+{
+  "sectionCode": "K",
+  "section": "Aging and Future Support",
+  "question": "139. What should we do to support aging transgender and LGBTQ+ individuals?",
+  "type": "checkbox",
+  "instruct": "Select up to 5 most important",
+  "rules": "Select up to 5",
+  "options": [
+    { "text": "Create old age homes specifically for LGBTQ+ elders", "code": 1 },
+    { "text": "Provide regular pension or financial support", "code": 2 },
+    { "text": "Ensure access to affordable healthcare", "code": 3 },
+    { "text": "Provide free/subsidized hormone therapy", "code": 4 },
+    { "text": "Create day care centers where elders can socialize", "code": 5 },
+    { "text": "Home-based care services", "code": 6 },
+    { "text": "Legal aid for property and pension rights", "code": 7 },
+    { "text": "Mental health and counseling services", "code": 8 },
+    { "text": "Regular health checkups", "code": 9 },
+    { "text": "Food security programs", "code": 10 },
+    { "text": "Transportation assistance", "code": 11 },
+    { "text": "Helpline specifically for elderly LGBTQ+ people", "code": 12 },
+    { "text": "Intergenerational programs connecting youth and elders", "code": 13 },
+    { "text": "Respect and dignity programs in healthcare", "code": 14 },
+    { "text": "Training for healthcare workers on elderly LGBTQ+ care", "code": 15 },
+    { "text": "Government recognition of LGBTQ+ elders as vulnerable group", "code": 16 },
+    { "text": "Housing assistance programs", "code": 17 },
+    { "text": "Employment opportunities suitable for older adults", "code": 18 },
+    { "text": "Other", "code": 96 },
+    { "text": "Prefer not to say", "code": 98 }
+  ]
+},
 
 {
   "sectionCode": "L",
-  "section": "Climate Change & Sexual Health",
+  "mainsection": "Climate Change & Sexual Health",
+  "maindesc":"Now I'd like to ask about environmental changes and extreme weather you may have experienced. India is experiencing more extreme heat, floods, droughts, and other climate-related events. We want to understand how these affect people's lives and health.",
+  "section":"Climate Change & Sexual Health",
   "question": "140. Because of extreme weather or environmental problems I have had trouble accessing sexual health services.",
   "options": [
     { "text": "True", "code": 1 },
@@ -1809,7 +2246,9 @@
 
 {
   "sectionCode": "M",
-  "section": "Virtual Health Services and Support",
+  "mainsection": "Virtual Health Services and Support",
+  "maindesc":"Interviewer note: This section asks about the respondent's interest in and attitudes toward receiving health-related services through virtual or online means. This includes services such as HIV testing guidance, linkage to care, treatment support, and counselling. Read each question clearly and offer the response options as listed. Do not prompt or suggest answers.",
+  "section":"Virtual Health Services and Support",
   "question": "148. Would you be interested in receiving health services through a virtual platform?",
   "options": [
     { "text": "Yes", "code": 1 },
@@ -1924,6 +2363,8 @@
 
 {
   "sectionCode": "M",
+  "mainSection":"Closing Question",
+  "maindesc":"Thank you for sharing your experiences with us. Before we finish:",
   "section": "Closing Questions",
   "question": "152. Is there any other important topic we didn't ask about?",
   "options": [
