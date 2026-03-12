@@ -1171,6 +1171,7 @@
     "maindesc":"SUBSTANCE USE AND ALCOHOL",
     "mainsection":"These questions ask about your use of alcohol, drugs, and other substances. Many people use substances to cope with stress or for other reasons. There is no judgment - this information helps us provide better health services.",
     "section": "General Substance Use",
+    "question":"Q88. Have you ever used any of the following substances?",
     "options": [
       { "text": "None", "code": 1 },
       { "text": "Cannabis/Marijuana/Ganja", "code": 2 },

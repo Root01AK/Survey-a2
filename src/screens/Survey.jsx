@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import questions from "../data/questions.json";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import Select from "react-select";
@@ -22,7 +22,6 @@ export default function MultiStepForm() {
     exitSurvey: false,
   });
 
-  
   /* ================= STATE ================= */
 
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -31,7 +30,9 @@ export default function MultiStepForm() {
   const today = new Date().toISOString().split("T")[0];
   const [showOtp, setShowOtp] = useState(false);
   const [showSectionIntro, setShowSectionIntro] = useState(true);
-
+  const [navHistory, setNavHistory] = useState([]); // ← ADD THIS
+  const isGoingBack = useRef(false);
+  const [btnState, setBtnState] = useState({}); // tracks hover/press per button
   const [formData, setFormData] = useState({
     date: today,
     clinic: "",
@@ -140,12 +141,27 @@ export default function MultiStepForm() {
     formData.consentGiven;
 
   /* ================= NEXT ================= */
+  const pushHistory = () => {
+    setNavHistory((prev) => [
+      ...prev,
+      {
+        sectionIndex: currentSectionIndex,
+        questionIndex: currentQuestionIndex,
+        intro: showSectionIntro,
+      },
+    ]);
+  };
 
   const handleNext = () => {
-    if (showSectionIntro && currentSection.code !== "CONSENT") {
-  setShowSectionIntro(false);
-  return;
-}
+    pushHistory();
+    if (
+      showSectionIntro &&
+      currentSection.code !== "CONSENT" &&
+      currentQuestionIndex === 0
+    ) {
+      setShowSectionIntro(false);
+      return;
+    }
     if (currentSection.code === "CONSENT") {
       setCurrentSectionIndex(1);
       return;
@@ -187,9 +203,14 @@ export default function MultiStepForm() {
     }
     /* RULE 3: If Q14 = No skip to Section C */
 
+    /* RULE 3: If Q14 = No skip to Section C */
+
+    const q14 = surveyQuestions.find((q) => q.question.startsWith("14."));
+
     if (
-      currentQuestion.question.startsWith("14.") &&
-      answers[currentQuestion.index] === "No"
+      q14 &&
+      currentQuestion.index === q14.index &&
+      answers[q14.index] === "No"
     ) {
       const sectionCIndex = sections.findIndex((s) => s.code === "C");
 
@@ -590,24 +611,29 @@ export default function MultiStepForm() {
 
     /* NORMAL FLOW */
 
-    if (currentQuestionIndex < surveyQuestions.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
+    const nextQuestion = surveyQuestions[currentQuestionIndex + 1];
+
+    if (nextQuestion) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else if (currentSectionIndex < sections.length - 1) {
-      setCurrentSectionIndex((prev) => prev + 1);
+      setCurrentSectionIndex(currentSectionIndex + 1);
       setCurrentQuestionIndex(0);
     }
   };
   /* ================= BACK ================= */
 
+  // 2. handleBack
   const handleBack = () => {
     if (currentSection.code === "CONSENT") return;
+    if (navHistory.length === 0) return;
 
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev - 1);
-    } else if (currentSectionIndex > 0) {
-      setCurrentSectionIndex((prev) => prev - 1);
-      setCurrentQuestionIndex(0);
-    }
+    isGoingBack.current = true;
+
+    const prev = navHistory[navHistory.length - 1];
+    setNavHistory((h) => h.slice(0, -1));
+    setCurrentSectionIndex(prev.sectionIndex);
+    setCurrentQuestionIndex(prev.questionIndex);
+    setShowSectionIntro(prev.intro);
   };
 
   const handleCheckboxChange = (qIndex, option) => {
@@ -638,10 +664,16 @@ export default function MultiStepForm() {
       [qIndex]: updated,
     }));
   };
-  
-useEffect(() => {
-  setShowSectionIntro(true);
-}, [currentSectionIndex]);
+
+  useEffect(() => {
+    if (isGoingBack.current) {
+      isGoingBack.current = false;
+      return;
+    }
+    if (currentSection.code !== "CONSENT") {
+      setShowSectionIntro(true);
+    }
+  }, [currentSectionIndex]);
   /* ================= UI ================= */
 
   return (
@@ -649,16 +681,19 @@ useEffect(() => {
       <div
         style={{
           ...styles.card,
-          width: currentSection.code === "CONSENT" ? "400px" : "800px",
+          width: currentSection.code === "CONSENT" ? "800px" : "800px",
         }}
       >
         {!showSectionIntro && (
-  <h2>
-    SECTION {currentSection.code}: {currentSubSection}
-  </h2>
-)}
+          <h2>
+            SECTION {currentSection.code}: {currentSubSection}
+          </h2>
+        )}
 
         {/* ===== Progress ===== */}
+        <div style={{ marginBottom: "10px", fontSize: "13px", color: "#777" }}>
+          Section {currentSectionIndex + 1} of {sections.length}
+        </div>
 
         <div style={styles.progressWrapper}>
           <div style={styles.progressBar}>
@@ -675,269 +710,316 @@ useEffect(() => {
 
         {currentSection.code === "CONSENT" && (
           <>
-            <div style={styles.questionBlock}>
-              <label style={styles.label}>Date</label>
-              <input
-                type="text"
-                name="date"
-                value={new Date().toLocaleDateString("en-GB")}
-                readOnly
-                style={styles.input}
-              />
-              <label style={styles.label}>Clinic Location</label>
-              <input
-                type="text"
-                name="clinic"
-                placeholder="Clinic Location"
-                value={formData.clinic}
-                onChange={handleConsentChange}
-                style={styles.input}
-              />
-              <label style={styles.label}>Interviewer ID</label>
-              <input
-                type="text"
-                name="interviewerId"
-                placeholder="Interviewer ID"
-                value={formData.interviewerId}
-                onChange={handleConsentChange}
-                style={styles.input}
-              />
-              <label style={styles.label}>Participant Mobile Number</label>
+            {/* SECTION HEADER */}
+            <h2 style={styles.sectionHeader}>
+              SECTION A: Consent and Background Information
+            </h2>
 
-              <div style={styles.mobileContainer}>
-                <div style={styles.mobileInputWrapper}>
-                  <select
-                    name="countryCode"
-                    value={formData.countryCode}
-                    onChange={handleConsentChange}
-                    style={styles.countryPicker}
-                  >
-                    <option value="+91">🇮🇳 +91</option>
-                    <option value="+1">🇺🇸 +1</option>
-                    <option value="+44">🇬🇧 +44</option>
-                  </select>
-
+            <div style={styles.consentRow}>
+              {/* LEFT SIDE - FORM */}
+              <div style={styles.consentForm}>
+                <div style={styles.questionBlock}>
+                  <label style={styles.label}>Date</label>
                   <input
-                    type="tel"
-                    name="mobile"
-                    placeholder="Mobile Number"
-                    value={formData.mobile}
-                    onChange={handleConsentChange}
-                    style={styles.mobileInput}
+                    type="text"
+                    name="date"
+                    value={new Date().toLocaleDateString("en-GB")}
+                    readOnly
+                    style={styles.input}
                   />
-                </div>
 
-                {!showOtp && (
-                  <button
-                    style={styles.otpButton}
-                    onClick={() => setShowOtp(true)}
-                  >
-                    Get OTP
-                  </button>
-                )}
-              </div>
-              {showOtp && (
-                <>
-                  <label style={styles.otplabel}>Enter OTP</label>
+                  <label style={styles.label}>Clinic Location</label>
+                  <input
+                    type="text"
+                    name="clinic"
+                    placeholder="Clinic Location"
+                    value={formData.clinic}
+                    onChange={handleConsentChange}
+                    style={styles.input}
+                  />
 
-                  <div style={styles.otpRow}>
-                    <input
-                      type="text"
-                      name="otp"
-                      placeholder="Enter OTP"
-                      value={formData.otp}
-                      onChange={handleConsentChange}
-                      style={styles.otpInput}
-                    />
+                  <label style={styles.label}>Interviewer ID</label>
+                  <input
+                    type="text"
+                    name="interviewerId"
+                    placeholder="Interviewer ID"
+                    value={formData.interviewerId}
+                    onChange={handleConsentChange}
+                    style={styles.input}
+                  />
 
-                    <button style={styles.verifyButton}>Verify</button>
+                  <label style={styles.label}>Participant Mobile Number</label>
+
+                  <div style={styles.mobileContainer}>
+                    <div style={styles.mobileInputWrapper}>
+                      <select
+                        name="countryCode"
+                        value={formData.countryCode}
+                        onChange={handleConsentChange}
+                        style={styles.countryPicker}
+                      >
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                      </select>
+
+                      <input
+                        type="tel"
+                        name="mobile"
+                        placeholder="Mobile Number"
+                        value={formData.mobile}
+                        onChange={handleConsentChange}
+                        style={styles.mobileInput}
+                      />
+                    </div>
+
+                    {!showOtp && (
+                      <button
+                        style={styles.otpButton}
+                        onClick={() => setShowOtp(true)}
+                      >
+                        Get OTP
+                      </button>
+                    )}
                   </div>
-                </>
-              )}
-            </div>
 
-            <div style={styles.optionCard}>
-              <input
-                id="consent"
-                type="checkbox"
-                name="consentGiven"
-                checked={formData.consentGiven}
-                onChange={handleConsentChange}
-                style={styles.checkbox}
-              />
+                  {showOtp && (
+                    <>
+                      <label style={styles.otplabel}>Enter OTP</label>
 
-              <label htmlFor="consent">Yes, I agree to participate</label>
+                      <div style={styles.otpRow}>
+                        <input
+                          type="text"
+                          name="otp"
+                          placeholder="Enter OTP"
+                          value={formData.otp}
+                          onChange={handleConsentChange}
+                          style={styles.otpInput}
+                        />
+
+                        <button style={styles.verifyButton}>Verify</button>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* RIGHT SIDE - CONSENT TEXT */}
+
+              <div style={styles.consentText}>
+                <h1 style={styles.consentTitle}>Informed Consent</h1>
+
+                <p>
+                  Before we begin, I need to confirm that you understand and
+                  agree to participate: The interviewer has explained:
+                </p>
+
+                <ul style={styles.consentList}>
+                  <li>
+                    The purpose of this study and what questions will be asked
+                  </li>
+                  <li>
+                    That participation is voluntary and you can withdraw anytime
+                  </li>
+                  <li>
+                    How your information will be kept confidential and used only
+                    for research
+                  </li>
+                  <li>That you can refuse to answer any question</li>
+                  <li>That you can access support services if needed</li>
+                </ul>
+
+                <div style={styles.optionCard}>
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    name="consentGiven"
+                    checked={formData.consentGiven}
+                    onChange={handleConsentChange}
+                    style={styles.checkbox}
+                  />
+                  <label htmlFor="consent">Yes, I agree to participate</label>
+                </div>
+              </div>
             </div>
           </>
         )}
 
         {/* ================= QUESTIONS ================= */}
 
-  
-{/* ===== SECTION INTRO PAGE ===== */}
+        {/* ===== SECTION INTRO PAGE ===== */}
+        {showSectionIntro && currentQuestion && (
+          <div style={{ marginBottom: "30px" }}>
+            <h2
+              style={{ fontSize: "22px", fontWeight: "700", color: "#2f5597" }}
+            >
+              {currentSubSection}
+            </h2>
 
-{currentSection.code !== "CONSENT" && showSectionIntro && (
-  <div style={{ marginBottom: "30px" }}>
-    <h2 style={{ fontSize: "22px", fontWeight: "700", color: "#2f5597" }}>
-      {currentSubSection}
-    </h2>
-
-   {currentQuestion?.description && (
-      <p style={{ marginTop: "10px", color: "#555", lineHeight: "1.6" }}>
-        {currentQuestion.description}
-      </p>
-    )}
-
-    {currentQuestion?.note && (
-      <p style={{ marginTop: "10px", fontStyle: "italic" }}>
-        {currentQuestion.note}
-      </p>
-    )}
-  </div>
-)}
-
-{/* ===== QUESTIONS ===== */}
-
-{currentSection.code !== "CONSENT" && !showSectionIntro && currentQuestion && (
-  <div style={styles.questionBlock}>
-            {currentQuestion.note && (
-              <p style={styles.note}>{currentQuestion.note}</p>
-            )}
-            {currentQuestion.rules && (
-              <p style={styles.rules}>{currentQuestion.rules}</p>
+            {currentQuestion?.description && (
+              <p
+                style={{ marginTop: "10px", color: "#555", lineHeight: "1.6" }}
+              >
+                {currentQuestion.description}
+              </p>
             )}
 
-            <h4 style={styles.questionTitle}>{currentQuestion.question}</h4>
-            {currentQuestion.instruct && (
-              <p style={styles.instruct}>{currentQuestion.instruct}</p>
+            {currentQuestion?.note && (
+              <p style={{ marginTop: "10px", fontStyle: "italic" }}>
+                {currentQuestion.note}
+              </p>
             )}
-            {currentQuestion.info && (
-              <p style={styles.info}>{currentQuestion.info}</p>
-            )}
-            {/* ===== TEXT INPUT ===== */}
-
-            {!currentQuestion.options && (
-              <input
-                type="text"
-                placeholder="Type your answer"
-                value={answers[currentQuestion.index] || ""}
-                onChange={(e) =>
-                  handleAnswerChange(currentQuestion.index, e.target.value)
-                }
-                style={styles.input}
-              />
-            )}
-
-            {/* ===== DROPDOWN ===== */}
-
-            {currentQuestion.options && currentQuestion.options.length > 6 && (
-              <Select
-                options={currentQuestion.options.map((opt) => ({
-                  value: opt.text,
-                  label: (
-                    <div style={styles.dropdownRow}>
-                      <span>{opt.text}</span>
-                      <span style={styles.optionCode}>{opt.code}</span>
-                    </div>
-                  ),
-                }))}
-                value={
-                  answers[currentQuestion.index]
-                    ? {
-                        value: answers[currentQuestion.index],
-                        label: answers[currentQuestion.index],
-                      }
-                    : null
-                }
-                onChange={(selected) =>
-                  handleAnswerChange(currentQuestion.index, selected.value)
-                }
-                isSearchable
-              />
-            )}
-
-            {/* ===== SMALL OPTIONS ===== */}
-
-            {currentQuestion.options &&
-              currentQuestion.options.length <= 6 &&
-              currentQuestion.options.map((option, oIndex) => {
-                const selected = Array.isArray(answers[currentQuestion.index])
-                  ? answers[currentQuestion.index]
-                  : [];
-
-                const isCheckbox = currentQuestion.type === "checkbox";
-
-                const isSelected = isCheckbox
-                  ? selected.includes(option)
-                  : answers[currentQuestion.index] === option.text;
-
-                const exclusiveOptions = [
-                  "I don't have anal sex",
-                  "Prefer not to say",
-                ];
-
-                const selectedExclusive = selected.find((v) =>
-                  exclusiveOptions.includes(v),
-                );
-
-                let disabled = false;
-
-                if (isCheckbox) {
-                  // If exclusive option selected → disable everything else
-                  if (selectedExclusive) {
-                    disabled = option !== selectedExclusive;
-                  }
-
-                  // If normal option selected → disable exclusive options
-                  if (
-                    !selectedExclusive &&
-                    selected.length > 0 &&
-                    exclusiveOptions.includes(option)
-                  ) {
-                    disabled = true;
-                  }
-                }
-
-                return (
-                  <div
-                    key={oIndex}
-                    style={{
-                      ...styles.optionCard,
-                      backgroundColor: isSelected ? "#FFF8E1" : "#ffffff",
-                      border: isSelected
-                        ? "1px solid #FFC107"
-                        : "1px solid #f0f0f0",
-                    }}
-                    onClick={() =>
-                      isCheckbox
-                        ? handleCheckboxChange(currentQuestion.index, option)
-                        : handleAnswerChange(currentQuestion.index, option.text)
-                    }
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        width: "100%",
-                      }}
-                    >
-                      <input
-                        type={isCheckbox ? "checkbox" : "radio"}
-                        checked={isSelected}
-                        disabled={disabled}
-                        readOnly
-                        style={styles.checkbox}
-                      />
-
-                      <span style={{ flex: 1 }}>{option.text}</span>
-
-                      <span style={styles.optionCode}>{option.code}</span>
-                    </div>
-                  </div>
-                );
-              })}
           </div>
         )}
+
+        {/* ===== QUESTIONS ===== */}
+
+        {currentSection.code !== "CONSENT" &&
+          !showSectionIntro &&
+          currentQuestion && (
+            <div style={styles.questionBlock}>
+              {currentQuestion.note && (
+                <p style={styles.note}>{currentQuestion.note}</p>
+              )}
+              {currentQuestion.rules && (
+                <p style={styles.rules}>{currentQuestion.rules}</p>
+              )}
+
+              <h4 style={styles.questionTitle}>{currentQuestion.question}</h4>
+              {currentQuestion.instruct && (
+                <p style={styles.instruct}>{currentQuestion.instruct}</p>
+              )}
+              {currentQuestion.info && (
+                <p style={styles.info}>{currentQuestion.info}</p>
+              )}
+              {/* ===== TEXT INPUT ===== */}
+
+              {!currentQuestion.options && (
+                <input
+                  type="text"
+                  placeholder="Type your answer"
+                  value={answers[currentQuestion.index] || ""}
+                  onChange={(e) =>
+                    handleAnswerChange(currentQuestion.index, e.target.value)
+                  }
+                  style={styles.input}
+                />
+              )}
+
+              {/* ===== DROPDOWN ===== */}
+
+              {currentQuestion.options &&
+                currentQuestion.options.length > 6 && (
+                  <Select
+                    options={currentQuestion.options.map((opt) => ({
+                      value: opt.text,
+                      label: (
+                        <div style={styles.dropdownRow}>
+                          <span>{opt.text}</span>
+                          <span style={styles.optionCode}>{opt.code}</span>
+                        </div>
+                      ),
+                    }))}
+                    value={
+                      answers[currentQuestion.index]
+                        ? {
+                            value: answers[currentQuestion.index],
+                            label: answers[currentQuestion.index],
+                          }
+                        : null
+                    }
+                    onChange={(selected) =>
+                      handleAnswerChange(currentQuestion.index, selected.value)
+                    }
+                    isSearchable
+                  />
+                )}
+
+              {/* ===== SMALL OPTIONS ===== */}
+
+              {currentQuestion.options &&
+                currentQuestion.options.length <= 6 &&
+                currentQuestion.options.map((option, oIndex) => {
+                  const selected = Array.isArray(answers[currentQuestion.index])
+                    ? answers[currentQuestion.index]
+                    : [];
+
+                  const isCheckbox = currentQuestion.type === "checkbox";
+
+                  const isSelected = isCheckbox
+                    ? selected.includes(option)
+                    : answers[currentQuestion.index] === option.text;
+
+                  const exclusiveOptions = [
+                    "I don't have anal sex",
+                    "Prefer not to say",
+                  ];
+
+                  const selectedExclusive = selected.find((v) =>
+                    exclusiveOptions.includes(v),
+                  );
+
+                  let disabled = false;
+
+                  if (isCheckbox) {
+                    // If exclusive option selected → disable everything else
+                    if (selectedExclusive) {
+                      disabled = option !== selectedExclusive;
+                    }
+
+                    // If normal option selected → disable exclusive options
+                    if (
+                      !selectedExclusive &&
+                      selected.length > 0 &&
+                      exclusiveOptions.includes(option)
+                    ) {
+                      disabled = true;
+                    }
+                  }
+
+                  return (
+                    <div
+                      key={oIndex}
+                      style={{
+                        ...styles.optionCard,
+                        backgroundColor: isSelected ? "#FFF8E1" : "#ffffff",
+                        border: isSelected
+                          ? "1px solid #FFC107"
+                          : "1px solid #f0f0f0",
+                      }}
+                      onClick={() =>
+                        isCheckbox
+                          ? handleCheckboxChange(currentQuestion.index, option)
+                          : handleAnswerChange(
+                              currentQuestion.index,
+                              option.text,
+                            )
+                      }
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          width: "100%",
+                        }}
+                      >
+                        <input
+                          type={isCheckbox ? "checkbox" : "radio"}
+                          checked={isSelected}
+                          disabled={disabled}
+                          readOnly
+                          style={styles.checkbox}
+                        />
+
+                        <span style={{ flex: 1 }}>{option.text}</span>
+
+                        <span style={styles.optionCode}>{option.code}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         {currentQuestion?.optionrule && (
           <p style={styles.info}>{currentQuestion.optionrule}</p>
         )}
@@ -948,9 +1030,14 @@ useEffect(() => {
             <button
               style={{
                 ...styles.button,
-                backgroundColor: "#ccc",
-                color: "#333",
+                ...styles.btnBack,
+                ...(btnState.back === "hover" ? styles.btnBackHover : {}),
+                ...(btnState.back === "press" ? styles.btnPress : {}),
               }}
+              onMouseEnter={() => setBtnState({ back: "hover" })}
+              onMouseLeave={() => setBtnState({})}
+              onMouseDown={() => setBtnState({ back: "press" })}
+              onMouseUp={() => setBtnState({ back: "hover" })}
               onClick={handleBack}
             >
               <IoArrowBack /> Back
@@ -961,18 +1048,37 @@ useEffect(() => {
             <button
               style={{
                 ...styles.button,
-                backgroundColor:
-                  currentSection.code === "CONSENT" && !isConsentValid
-                    ? "#e0e0e0"
-                    : "#FFC107",
+                ...styles.btnNext,
+                ...(currentSection.code === "CONSENT" && !isConsentValid
+                  ? styles.btnDisabled
+                  : btnState.next === "hover"
+                    ? styles.btnNextHover
+                    : btnState.next === "press"
+                      ? styles.btnPress
+                      : {}),
               }}
               disabled={currentSection.code === "CONSENT" && !isConsentValid}
+              onMouseEnter={() => setBtnState({ next: "hover" })}
+              onMouseLeave={() => setBtnState({})}
+              onMouseDown={() => setBtnState({ next: "press" })}
+              onMouseUp={() => setBtnState({ next: "hover" })}
               onClick={handleNext}
             >
               Next <IoArrowForward />
             </button>
           ) : (
-            <button style={styles.button}>
+            <button
+              style={{
+                ...styles.button,
+                ...styles.btnNext,
+                ...(btnState.submit === "hover" ? styles.btnNextHover : {}),
+                ...(btnState.submit === "press" ? styles.btnPress : {}),
+              }}
+              onMouseEnter={() => setBtnState({ submit: "hover" })}
+              onMouseLeave={() => setBtnState({})}
+              onMouseDown={() => setBtnState({ submit: "press" })}
+              onMouseUp={() => setBtnState({ submit: "hover" })}
+            >
               Submit <IoArrowForward />
             </button>
           )}
@@ -1016,19 +1122,22 @@ useEffect(() => {
 const styles = {
   container: {
     minHeight: "100vh",
-    background: "#fff",
+    background: "linear-gradient(135deg,#f8fafc,#fff8e1)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: "40px",
+    fontFamily: "Poppins",
   },
 
   card: {
-    padding: "40px",
-    borderRadius: "20px",
-    boxShadow: "0 15px 40px rgba(0,0,0,0.08)",
+    padding: "50px",
+    borderRadius: "26px",
+    background: "#ffffff",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.08)",
+    border: "1px solid #f1f1f1",
+    transition: "all 0.3s ease",
   },
-
   title: {
     fontSize: "30px",
     fontWeight: "700",
@@ -1038,40 +1147,49 @@ const styles = {
   progressWrapper: { marginBottom: "20px" },
 
   progressBar: {
-    height: "8px",
-    background: "#eee",
-    borderRadius: "10px",
+    height: "10px",
+    background: "#f1f1f1",
+    borderRadius: "20px",
+    overflow: "hidden",
   },
 
   progressFill: {
     height: "100%",
-    background: "#FFC107",
+    background: "linear-gradient(90deg,#FFC107,#FF9800)",
+    borderRadius: "20px",
+    transition: "width 0.4s ease",
   },
 
   questionBlock: { marginBottom: "30px" },
 
   questionTitle: {
-    fontSize: "16px",
+    fontSize: "18px",
     fontWeight: "600",
-    marginBottom: "12px",
+    marginBottom: "16px",
+    color: "#1f2937",
+    lineHeight: "1.5",
   },
 
   input: {
     width: "100%",
-    padding: "12px",
-    borderRadius: "10px",
-    border: "1px solid #e5e5e5",
-    marginBottom: "14px",
+    padding: "16px",
+    borderRadius: "14px",
+    border: "1px solid #e5e7eb",
+    marginBottom: "18px",
+    fontSize: "15px",
+    background: "#fafafa",
+    transition: "all 0.2s ease",
   },
-
   optionCard: {
     display: "flex",
     alignItems: "center",
-    padding: "12px",
-    borderRadius: "10px",
-    marginBottom: "10px",
+    padding: "16px",
+    borderRadius: "14px",
+    marginTop: "25px",
     cursor: "pointer",
-    border: "1px solid #f0f0f0",
+    border: "1px solid #e5e7eb",
+    background: "#fafafa",
+    transition: "all 0.2s ease",
   },
 
   checkbox: {
@@ -1082,18 +1200,26 @@ const styles = {
 
   buttonContainer: {
     display: "flex",
-    gap: "10px",
+    gap: "12px",
+    marginTop: "30px",
+    borderTop: "1px solid #f1f1f1",
+    paddingTop: "20px",
   },
-
   button: {
     flex: 1,
     padding: "14px",
     borderRadius: "12px",
     border: "none",
-    background: "#FFC107",
+    background: "linear-gradient(135deg,#FFC107,#FFA000)",
     color: "#fff",
     fontWeight: "600",
     cursor: "pointer",
+    fontSize: "15px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "6px",
+    transition: "all 0.2s ease",
   },
 
   info: {
@@ -1116,8 +1242,8 @@ const styles = {
     display: "flex",
     alignItems: "center",
     gap: "12px",
+    marginBottom: "18px",
   },
-
   mobileInputWrapper: {
     display: "flex",
     alignItems: "center",
@@ -1159,15 +1285,19 @@ const styles = {
   },
 
   otpButton: {
-    background: "#FFC107",
-    border: "none",
-    padding: "12px 20px",
+    height: "38px",
+    padding: "0 22px",
     borderRadius: "10px",
-    cursor: "pointer",
+    border: "none",
+    background: "#FFC107",
+    color: "#fff",
     fontWeight: "600",
-    color: "white",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    whiteSpace: "nowrap",
   },
-
   verifyButton: {
     background: "#28a745",
     border: "none",
@@ -1207,13 +1337,12 @@ const styles = {
 
   modalBox: {
     background: "#fff",
-    padding: "30px",
-    borderRadius: "16px",
+    padding: "35px",
+    borderRadius: "18px",
     width: "420px",
     textAlign: "center",
-    boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.25)",
   },
-
   modalTitle: {
     fontSize: "22px",
     fontWeight: "700",
@@ -1242,12 +1371,7 @@ const styles = {
     width: "100%",
     marginLeft: "10px",
   },
-  optionCard: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "12px",
-  },
+
   optionCode: {
     color: "#777",
     fontWeight: "600",
@@ -1256,5 +1380,84 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
+  },
+  consentRow: {
+    display: "grid",
+    gridTemplateColumns: "1.1fr 1fr",
+    gap: "60px",
+    alignItems: "start",
+    marginTop: "20px",
+  },
+
+  consentForm: {
+    paddingRight: "40px",
+  },
+  consentText: {
+    paddingLeft: "40px",
+    borderLeft: "1px solid #eee",
+  },
+
+  consentList: {
+    marginTop: "18px",
+    paddingLeft: "20px",
+    lineHeight: "1.9",
+    color: "#374151",
+    fontSize: "15px",
+  },
+
+  sectionTitle: {
+    fontSize: "22px",
+    fontWeight: "700",
+    marginBottom: "20px",
+    color: "#2f5597",
+  },
+  consentTitle: {
+    textAlign: "center",
+    fontSize: "32px",
+    fontWeight: "700",
+    marginTop: "0px",
+    marginBottom: "20px",
+    letterSpacing: "1px",
+  },
+  sectionHeader: {
+    textAlign: "center",
+    fontSize: "32px",
+    fontWeight: "700",
+    marginBottom: "40px",
+    color: "#2f5597",
+    letterSpacing: "1px",
+  },
+  btnBack: {
+    background: "#f0f0f0",
+    color: "#444",
+    boxShadow: "0 4px 14px rgba(0,0,0,0.08)",
+  },
+  btnBackHover: {
+    background: "#e2e2e2",
+    color: "#222",
+    transform: "translateY(-2px)",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.13)",
+  },
+  btnNext: {
+    background: "linear-gradient(135deg,#FFC107,#FFA000)",
+    color: "#fff",
+    boxShadow: "0 4px 14px rgba(255,160,0,0.35)",
+  },
+  btnNextHover: {
+    background: "linear-gradient(135deg,#FFD54F,#FFC107)",
+    transform: "translateY(-2px)",
+    boxShadow: "0 8px 24px rgba(255,160,0,0.45)",
+  },
+  btnPress: {
+    transform: "translateY(1px) scale(0.98)",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.10)",
+    filter: "brightness(0.95)",
+  },
+  btnDisabled: {
+    background: "#e0e0e0",
+    color: "#aaa",
+    cursor: "not-allowed",
+    boxShadow: "none",
+    transform: "none",
   },
 };
